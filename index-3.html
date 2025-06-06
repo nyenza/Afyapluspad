@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="wpoceans">
+    <title>Afyaplus pads website</title>
+    <link href="assets/css/themify-icons.css" rel="stylesheet">
+    <link href="assets/css/font-awesome.min.css" rel="stylesheet">
+    <link href="assets/css/flaticon.css" rel="stylesheet">
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/animate.css" rel="stylesheet">
+    <link href="assets/css/owl.carousel.css" rel="stylesheet">
+    <link href="assets/css/owl.theme.css" rel="stylesheet">
+    <link href="assets/css/slick.css" rel="stylesheet">
+    <link href="assets/css/slick-theme.css" rel="stylesheet">
+    <link href="assets/css/swiper.min.css" rel="stylesheet">
+    <link href="assets/css/owl.transitions.css" rel="stylesheet">
+    <link href="assets/css/jquery.fancybox.css" rel="stylesheet">
+    <link href="assets/css/odometer-theme-default.css" rel="stylesheet">
+    <link href="assets/css/nice-select.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
+
+    <style>
+        .logo-slider {
+            width: 100%;
+            overflow: hidden;
+            white-space: nowrap;
+            position: relative;
+            margin: 20px 0;
+            background: #ffffff;
+            padding: 10px 0;
+        }
+        
+        .logo-slider:hover .logo-slide {
+            animation-play-state: paused;
+        }
+        
+        .logo-slide {
+            display: inline-block;
+            animation: 20s slide infinite linear;
+        }
+        
+        .logo-slide img {
+            height: 80px;
+            margin: 0 40px;
+            filter: grayscale(0%);
+            transition: filter 0.3s;
+        }
+        
+        .logo-slide img:hover {
+            filter: grayscale(0%);
+        }
+        
+        @keyframes slide {
+            from {
+                transform: translateX(0);
+            }
+            to {
+                transform: translateX(-100%);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- start page-wrapper -->
+    <div class="page-wrapper">
+        <!-- start preloader -->
+        <div class="preloader">
+            <div class="sk-folding-cube">
+                <div class="sk-cube1 sk-cube"></div>
+                <div class="sk-cube2 sk-cube"></div>
+                <div class="sk-cube4 sk-cube"></div>
+                <div class="sk-cube3 sk-cube"></div>
+            </div>
+        </div>
+        <!-- end preloader -->
+        <!-- Start header -->
+        <header id="header" class="wpo-site-header wpo-header-style-3">
+            <div class="topbar">
+                <div class="container">
+                    <div class="row">
+                        <div class="col col-md-6 col-sm-7 col-12">
+                    </div>
+                </div>
+            </div>  <!-- end topbar -->
+            <nav class="navigation navbar navbar-default">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="open-btn">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="index.html"><img src="assets/images/jali.png" alt="logo"></a>
+                    </div>
+                    <div id="navbar" class="navbar-collapse collapse navbar-right navigation-holder">
+                        <button class="close-navbar"><i class="ti-close"></i></button>
+                        <ul class="nav navbar-nav">
+                            <li class="menu-item-has-children">
+                                <a href="#">Who we are</a>
+                                <ul class="sub-menu">
+                                    <li><a href="about.html">About us </a></li>
+                                    <li><a href="index-2.html">Meet the team</a></li>
+                                     <!--<li><a href="index-3.html">Home style 3</a></li> -->
+                                </ul>
+                            </li>
+                            <li><a href="about.html">Our Products</a></li>
+                            <li class="menu-item-has-children">
+                            </li>
+                            <li class="menu-item-has-children">
+                                <a href="#">Impact</a>
+                                <ul class="sub-menu">
+                                    <a href="causes.html">Training</a>
+                                    <li><a href="event-single.html">Event Single</a></li>
+                                </ul>
+                            </li>
+                            <li class="menu-item-has-children">
+                                <a href="#">Pages</a>
+                                <ul class="sub-menu">
+                                    <li><a href="about.html">About</a></li>
+                                    <li><a href="donate.html">Donate</a></li>
+                                    <li><a href="volunteer.html">Volunteer</a></li>
+                                    <li><a href="error.html">404 Page</a></li>
+                                </ul>
+                            </li>
+                            <li class="menu-item-has-children">
+                                <a href="#">Blog</a>
+                                <ul class="sub-menu">
+                                    <li><a href="blog.html">Blog right sidebar</a></li>
+                                    <li><a href="blog-left.html">Blog left sidebar</a></li>
+                                    <li><a href="blog-fulwidth.html">Blog fullwidth</a></li>
+                                    <li class="menu-item-has-children">
+                                        <a href="#">Blog details</a>
+                                        <ul class="sub-menu">
+                                            <li><a href="blog-single.html">Blog details right sidebar</a></li>
+                                            <li><a href="blog-single-left.html">Blog details left sidebar</a></li>
+                                            <li><a href="blog-single-fluid.html">Blog details fullwidth</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div><!-- end of nav-collapse -->
+                    <div class="cart-search-contact">
+                        <div class="mini-cart">
+                            <button class="cart-toggle-btn"> <i class="fi flaticon-shopping-bag"></i> <span class="cart-count">02</span></button>
+                            <div class="mini-cart-content">
+                                <div class="mini-cart-title">
+                                    <p>Shopping Cart</p>
+                                </div>
+                                <div class="mini-cart-items">
+                                    <div class="mini-cart-item clearfix">
+                                        <div class="mini-cart-item-image">
+                                            <a href="#"><img src="assets/images/shop/mini/img-1.jpg" alt="Hoodie with zipper"></a>
+                                        </div>
+                                        <div class="mini-cart-item-des">
+                                            <a href="#">Hoodie with zipper</a>
+                                            <span class="mini-cart-item-price">$25.15</span>
+                                            <span class="mini-cart-item-quantity">x 1</span>
+                                        </div>
+                                    </div>
+                                    <div class="mini-cart-item clearfix">
+                                        <div class="mini-cart-item-image">
+                                            <a href="#"><img src="assets/images/shop/mini/img-2.jpg" alt="Hoodie with zipper"></a>
+                                        </div>
+                                        <div class="mini-cart-item-des">
+                                            <a href="#">Hoodie with zipper</a>
+                                            <span class="mini-cart-item-price">$12.99</span>
+                                            <span class="mini-cart-item-quantity">x 2</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mini-cart-action clearfix">
+                                    <span class="mini-checkout-price">$255.12</span>
+                                    <a href="" class="theme-btn-s4">View Cart</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="header-search-form-wrapper">
+                            <button class="search-toggle-btn"><i class="fi flaticon-magnifying-glass"></i></button>
+                            <div class="header-search-form">
+                                <form>
+                                    <div>
+                                        <input type="text" class="form-control" placeholder="Search here...">
+                                        <button type="submit"><i class="fi flaticon-magnifying-glass"></i></button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- end of container -->
+            </nav>
+        </header>
+        <!-- end of header -->
+       <!-- start of hero -->
+        <section class="hero hero-style-3">
+            <div class="hero-slider">
+                <div class="slide">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col col-md-12 slide-caption">
+                                <div class="slide-title">
+                                    <h1> <b>Welcome to Afyaplus Antimicrobial <span>reusable sanitary pads</span></b></h1>
+                                </div>
+                                <div class="slide-subtitle">
+                                    <p>The more quality, hygienic and affordable reusable sanitary pads.</p>
+                                   <!-- <p>You Can Satisfied Yourself By Helping.</p> -->
+                                </div>
+                                <div class="btns">
+                                    <a href="donate.html" class="theme-btn">Read more</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="right-vec">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- end of hero slider -->
+
+        <!-- wpo-mission-area start -->
+        <div class="wpo-mission-area-2 section-padding">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="wpo-section-title">
+                            <span>What We Do?</span>
+                            <h2>We Are In A Mission To Help The Helpless</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="wpo-mission-wrap">
+                    <div class="row">
+                        <div class="col-md-3 col-sm-6 col-12 custom-grid">
+                            <div class="wpo-mission-item">
+                                <div class="wpo-mission-icon-5">
+                                    <img src="assets/images/mission/icon1.png" alt="">
+                                </div>
+                                <div class="wpo-mission-content">
+                                    <h2>Clean Water</h2>
+                                    <p>Lorem ipsum dolor amet cosectetur adipiscing, sed do eiusmod.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6 col-12 custom-grid">
+                            <div class="wpo-mission-item">
+                                <div class="wpo-mission-icon-6">
+                                    <img src="assets/images/mission/icon2.png" alt="">
+                                </div>
+                                <div class="wpo-mission-content">
+                                    <h2>Healthy Food</h2>
+                                    <p>Lorem ipsum dolor amet cosectetur adipiscing, sed do eiusmod.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6 col-12 custom-grid">
+                            <div class="wpo-mission-item">
+                                <div class="wpo-mission-icon-7">
+                                    <img src="assets/images/mission/icon3.png" alt="">
+                                </div>
+                                <div class="wpo-mission-content">
+                                    <h2>Pure Education</h2>
+                                    <p>Lorem ipsum dolor amet cosectetur adipiscing, sed do eiusmod.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6 col-12 custom-grid">
+                            <div class="wpo-mission-item">
+                                <div class="wpo-mission-icon-8">
+                                    <img src="assets/images/mission/icon4.png" alt="">
+                                </div>
+                                <div class="wpo-mission-content">
+                                    <h2>Medical Facilities</h2>
+                                    <p>Lorem ipsum dolor amet cosectetur adipiscing, sed do eiusmod.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- wpo-mission-area end -->
+        <!-- wpo-about-area start -->
+        <div class="wpo-about-area section-padding">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 colsm-12">
+                        <div class="wpo-about-text">
+                            <div class="wpo-section-title">
+                               <!-- <span>Menstrual Health Hygiene Education impacts</span> -->
+                                <h2>Menstrual Health Hygiene Education impacts</h2>
+                            </div>
+                            <p>We aim to enhance the quality of life in our community by offering high-quality and affordable products. This goal is supported by our well-trained staff, who strive for excellence in products and services.</p>
+                            <p>We prioritize transparency, adhere to good hygiene practices, and are dedicated to customer centricity.</p>
+                            <div class="btns">
+                                <a href="donate.html" class="theme-btn" tabindex="0">See more</a>
+                                <ul>
+                                    <li class="video-holder">
+                                        <a href="https://www.youtube.com/embed/iSbzh0r9IV4?autoplay=1" class="video-btn" data-type="iframe" tabindex="0"></a>
+                                    </li>
+                                    <li class="video-text">
+                                        <a href="https://www.youtube.com/embed/iSbzh0r9IV4?autoplay=1" class="video-btn" data-type="iframe" tabindex="0">
+                                            Watch Our Video
+                                        </a>
+                                        
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 colsm-12">
+                        <div class="wpo-about-img-3">
+                            <img src="assets/images/about3.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- wpo-about-area end -->
+        <!-- wpo-case-area start -->
+        <div class="wpo-case-area section-padding">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="wpo-section-title">
+                            <!-- <span>Our Causes</span> -->
+                            <h2>JALI offers the following services</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="wpo-case-wrap">
+                    <div class="wpo-case-slider">
+                        <div class="wpo-case-single">
+                            <div class="wpo-case-item">
+                                <div class="wpo-case-img">
+                                    <img src="assets/images/case/img1.jpg" alt="">
+                                </div>
+                                <div class="wpo-case-content">
+                                    <div class="wpo-case-text-top">
+                                        <h2>Reusable sanitary pads production</h2>
+                                        <ul>
+                                            <li>Our team of over 15 dedicated youth and women work diligently with top-notch production machinery to meet our community's daily demands.</li>
+                                        </ul>
+                                    </div>
+                                    <div class="case-btn">
+                                        <ul>
+                                            <li><a href="#">Learn More</a></li>
+                                            <li><a href="#">Donate Now</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="wpo-case-single">
+                            <div class="wpo-case-item">
+                                <div class="wpo-case-img">
+                                    <img src="assets/images/case/img2.jpg" alt="">
+                                </div>
+                                <div class="wpo-case-content">
+                                    <div class="wpo-case-text-top">
+                                        <h2>Menstrual Health Hygiene Education</h2>
+                                        <ul>
+                                            <li>JALI bridges the MHH information gap by offering Afyaplus reusable pads and MHH, sexual reproductive health and rights education with professionalism.</li>
+                                        </ul>
+                                    </div>
+                                    <div class="case-btn">
+                                        <ul>
+                                            <li><a href="#">Learn More</a></li>
+                                            <li><a href="#">Donate Now</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="wpo-case-single">
+                            <div class="wpo-case-item">
+                                <div class="wpo-case-img">
+                                    <img src="assets/images/case/img3.jpg" alt="">
+                                </div>
+                                <div class="wpo-case-content">
+                                    <div class="wpo-case-text-top">
+                                        <h2>Training on producing reusable sanitary pads</h2>
+                                        <ul>
+                                            <li>To collectively end period poverty, our team is dedicated to achieving SDG goal 6. We train individuals and groups to make low-cost reusable pads using locally available materials.</li>
+                                        </ul>
+                                    </div>
+                                    <div class="case-btn">
+                                        <ul>
+                                            <li><a href="#">Learn More</a></li>
+                                            <li><a href="donate.html">Donate Now</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- wpo-case-area end -->
+        <!-- .wpo-counter-area start -->
+        <div class="wpo-counter-style-2">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="wpo-counter-grids">
+                            <div class="grid">
+                                <div>
+                                    <h2><span class="odometer" data-count="23">00</span>k</h2>
+                                </div>
+                                <p>Sanitary Pad produced</p>
+                            </div>
+                            <div class="grid">
+                                <div>
+                                    <h2><span class="odometer" data-count="26">00</span>+</h2>
+                                </div>
+                                <p>Partners and stakeholders</p>
+                            </div>
+                            <div class="grid">
+                                <div>
+                                    <h2><span class="odometer" data-count="38">00</span>k</h2>
+                                </div>
+                                <p>Number of people reached</p>
+                            </div>
+                            <div class="grid">
+                                <div>
+                                    <h2><span class="odometer" data-count="15">00</span>+</h2>
+                                </div>
+                                <p>Number of Community Based trainer empowered</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- .wpo-counter-area end -->
+
+        <!-- wpo-team-area start -->
+        <div class="wpo-team-area section-padding">
+            <div class="container">
+                <div class="row">
+                     <div class="col-12">
+                        <div class="wpo-section-title">
+                           <!-- <span>Meet Our Team</span>-->
+                            <h2>Why Afyaplus pads</h2>
+                        </div>
+                    </div>
+                 </div>
+                <div class="row">
+                    <div class="col-lg-4 col-md-4 col-sm-6 col-12 custom-grid">
+                        <div class="wpo-team-wrap">
+                            <div class="wpo-team-img">
+                                <img src="assets/images/team/team-1.jpg" alt="">
+                            </div>
+                            <div class="wpo-team-content">
+                                <div class="wpo-team-text-sub">
+                                    <h2>Extra Soft, Natural and  Comfortable</h2>
+                                  <!----  <span>CEO & Founder</span> -->
+                                    <ul>
+                                        <li><a>------------------------------------------</a></li> 
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-6 col-12 custom-grid">
+                        <div class="wpo-team-wrap">
+                            <div class="wpo-team-img">
+                                <img src="assets/images/team/team-2.jpg" alt="">
+                            </div>
+                            <div class="wpo-team-content">
+                                <div class="wpo-team-text-sub">
+                                    <h2>Can be reused up to three years</h2>
+                                 <!--- <span>Volunteer</span> -->
+                                    <ul>
+                                        <li><a>------------------------------------</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-6 col-12 custom-grid">
+                        <div class="wpo-team-wrap">
+                            <div class="wpo-team-img">
+                                <img src="assets/images/team/team-3.jpg" alt="">
+                            </div>
+                            <div class="wpo-team-content">
+                                <div class="wpo-team-text-sub">
+                                    <h2>Saves more than 85% of your menstrual budget</h2>
+                                 <!---<span>Volunteer</span> -->
+                                    <ul>
+                                        <li><a>-------------------------------------</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- wpo-team-area end -->
+   <!-- world area start -->
+   <div class="wpo-world-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="wpo-world-section">
+                    <h2>Be a part of change and support girls to live boldly and proudly </h2>
+                    <a href="#"><img src="assets/images/team/1.png" alt="">Order with us</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- world area end -->
+
+        <!-- wpo-event-area start -->
+
+        <div class="wpo-event-area section-padding">
+            <div class="container">
+                <div class="row">
+                     <div class="col-12">
+                        <div class="wpo-section-title">
+                          <!--  <span>Our News</span> -->
+                            <h2>Our News</h2>
+                        </div>
+                    </div>
+                 </div>
+                <div class="row">
+                    <div class="col-md-4 col-sm-6 col-12 custom-grid">
+                        <div class="wpo-event-item">
+                            <div class="wpo-event-img">
+                                <img src="assets/images/event/Image 1.jpg" alt="">
+                                <div class="thumb-text">
+                                    <span>25</span>
+                                    <span>March</span>
+                                </div>
+                            </div>
+                            <div class="wpo-event-text">
+                                <h2>JALI Distributed Afyaplus pads in Manyara region</h2>
+                                <ul>
+                                    <li><i class="fa fa-clock-o" aria-hidden="true"></i>8.00 - 5.00</li>
+                                    <li><i class="fi flaticon-pin"></i>Manyara region</li>
+                                </ul>
+                                <p>In March 2024, Jamii Afyaplus Limited, in partnership with Oikos</p>
+                                <a href="#">Learn More...</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6 col-12 custom-grid">
+                        <div class="wpo-event-item">
+                            <div class="wpo-event-img">
+                                <img src="assets/images/event/Image 2.jpg" alt="">
+                                <div class="thumb-text-2">
+                                    <span>29</span>
+                                    <span>NOV</span>
+                                </div>
+                            </div>
+                            <div class="wpo-event-text">
+                                <h2>Safe Menstrual Hygiene Day 2023 </h2>
+                                <ul>
+                                    <li><i class="fa fa-clock-o" aria-hidden="true"></i>8.00 - 15.00</li>
+                                    <li><i class="fi flaticon-pin"></i>Arusha</li>
+                                </ul>
+                                <p>Menstruation is a natural and essential part of every girl’s and woman’s life, yet the ..</p>
+                                <a href="#">Learn More...</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6 col-12 custom-grid">
+                        <div class="wpo-event-item">
+                            <div class="wpo-event-img">
+                                <img src="assets/images/event/Image 3.jpg" alt="">
+                                <div class="thumb-text-3">
+                                    <span>25</span>
+                                    <span>NOV</span>
+                                </div>
+                            </div>
+                            <div class="wpo-event-text">
+                                <h2>Afyaplus pads team are in various location in Iringa </h2>
+                                <ul>
+                                    <li><i class="fa fa-clock-o" aria-hidden="true"></i>8.30 - 16.00pm</li>
+                                    <li><i class="fi flaticon-pin"></i>Iringa</li>
+                                </ul>
+                                <p>Afyaplus pads marketing team will be in various location of Iringa Greetings to our customers of Afyaplus pads…</p>
+                                <a href="#">Learn More...</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- wpo-event-area end -->
+
+        <!-- wpo-cta-area start -->
+
+        <div class="wpo-cta-area-2">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="wpo-cta-text">
+                            <h2>Afyaplus Pads live confidently with trusted protection</h2>
+                            <p>We offer high-quality pads thoughtfully designed to provide all-round care, long-lasting comfort, and reliable protection helping you feel fresh, confident, and supported every day, no matter where life takes you. </p>
+                            <div class="btns">
+                                <a href="#" class="theme-btn"> Shop with us</a>
+                                <a href="#" class="theme-btn-s2">Join Us Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- wpo-cta-area end -->
+
+        <!-- slider start-->
+        <div class="wpo-section-title">
+            <h2>Our clients</h2> </div>
+            <div class="logo-slider">
+                <div class="logo-slide">
+                    <img src="assets/images/logo/1.png" alt="Partner Logo 1">
+                    <img src="assets/images/logo/2.jpg" alt="Partner Logo 2">
+                    <img src="assets/images/logo/3.png" alt="Partner Logo 3">
+                    <img src="assets/images/logo/5.png" alt="Partner Logo 4">
+                    <img src="assets/images/logo/4.png" alt="Partner Logo 5">
+                    <!-- Duplicate for continuous loop -->
+                    <img src="assets/images/logo/6.jpg" alt="Partner Logo 1">
+                    <img src="assets/images/logo/7.jpg" alt="Partner Logo 2">
+                </div>
+            
+        </div>
+        
+         <!-- slder end-->
+
+       <div class="wpo-ne-footer">
+            <!-- start wpo-news-letter-section -->
+            <section class="wpo-news-letter-section">
+                <div class="container">
+                    <div class="row">
+                        <div class="col col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+                            <div class="wpo-newsletter">
+                                <h3>Follow us for more information</h3>
+                                <div class="wpo-newsletter-form">
+                                    <form>
+                                        <div>
+                                            <input type="text" placeholder="Enter Your Email" class="form-control">
+                                            <button type="submit">Subscribe</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> <!-- end container -->
+            </section>
+            <!-- end wpo-news-letter-section -->
+            <!-- start wpo-site-footer -->
+            <footer class="wpo-site-footer">
+                <div class="wpo-upper-footer">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col col-lg-3 col-md-3 col-sm-6">
+                                <div class="widget about-widget">
+                                    <div class="logo widget-title">
+                                        <img src="assets/images/logo-2.png" alt="blog">
+                                    </div>
+                                    <p>Afyaplus pads are sustainable solution offer providing long-lasting protection, reduce waste, and help you save costs. </p>
+                                    <ul>
+                                        <li><a href="https://www.facebook.com/p/AfyaplusPads-100063977850113/"><i class="ti-facebook"></i></a></li>
+                                        <li><a href="https://x.com/search?q=afyaplus%20pads&src=typed_query"><i class="ti-twitter-alt"></i></a></li>
+                                        <li><a href="https://www.instagram.com/afyapluspads/"><i class="ti-instagram"></i></a></li>
+                                        <li><a href="https://www.linkedin.com/company/afyaplus-organization/posts/?feedView=all"><i class="ti-linkedIn"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col col-lg-3 col-md-3 col-sm-6">
+                                <div class="widget link-widget resource-widget">
+                                    <div class="widget-title">
+                                        <h3>Top News</h3>
+                                    </div>
+                                    <div class="news-wrap">
+                                        <div class="news-img">
+                                            <img src="assets/images/footer/2.jpg" alt="">
+                                        </div>
+                                        <div class="news-text">
+                                            <h3>JALI Distributed Afyaplus pads in Manyara region</h3>
+                                            <span>12 March, 2023</span>
+                                        </div>
+                                    </div>
+                                    <div class="news-wrap">
+                                        <div class="news-img">
+                                            <img src="assets/images/footer/1.jpg" alt="">
+                                        </div>
+                                        <div class="news-text">
+                                            <h3>TAWASANET Visits JALI</h3>
+                                            <span>14 June, 2024</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col col-lg-2 col-md-3 col-sm-6">
+                                <div class="widget link-widget">
+                                    <div class="widget-title">
+                                        <h3>Useful Links</h3>
+                                    </div>
+                                    <ul>
+                                        <li><a href="about.html">About Us</a></li>
+                                        <li><a href="#">Our services</a></li>
+                                        <li><a href="#">Blog</a></li>
+                                        <li><a href="#">Contact Us</a></li>
+                                        <li><a href="#">MHH education</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col col-lg-3 col-lg-offset-1 col-md-3 col-sm-6">
+                                <div class="widget market-widget wpo-service-link-widget">
+                                    <div class="widget-title">
+                                        <h3>Contact </h3>
+                                    </div>
+                                    <p>Be a part of change by contact us</p>
+                                    <div class="contact-ft">
+                                        <ul>
+                                            <li><i class="fi flaticon-pin"></i>BOX 1562 SIDO, Iringa, Tanzania</li>
+                                            <li><i class="fi flaticon-call"></i>+0 (255) 756 825 134</li>
+                                            <li><i class="fi flaticon-envelope"></i>info@afyapluspads.com</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> <!-- end container -->
+                </div>
+                <div class="wpo-lower-footer">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col col-xs-12">
+                                <p class="copyright">&copy; 2025 JALI ICT DEPARTMENT.  All rights reserved</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+            <!-- end wpo-site-footer -->
+        </div>
+    </div>
+    <!-- end of page-wrapper -->
+    <!-- All JavaScript files
+    ================================================== -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <!-- Plugins for this template -->
+    <script src="assets/js/jquery-plugin-collection.js"></script>
+    <!-- Custom script for this template -->
+    <script src="assets/js/script.js"></script>
+</body>
+
+</html>

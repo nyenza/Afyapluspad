@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+       <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="wpoceans">
+    <title>Afyaplus pads website</title>
+    <link href="assets/css/themify-icons.css" rel="stylesheet">
+    <link href="assets/css/font-awesome.min.css" rel="stylesheet">
+    <link href="assets/css/flaticon.css" rel="stylesheet">
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/animate.css" rel="stylesheet">
+    <link href="assets/css/owl.carousel.css" rel="stylesheet">
+    <link href="assets/css/owl.theme.css" rel="stylesheet">
+    <link href="assets/css/slick.css" rel="stylesheet">
+    <link href="assets/css/slick-theme.css" rel="stylesheet">
+    <link href="assets/css/swiper.min.css" rel="stylesheet">
+    <link href="assets/css/owl.transitions.css" rel="stylesheet">
+    <link href="assets/css/jquery.fancybox.css" rel="stylesheet">
+    <link href="assets/css/odometer-theme-default.css" rel="stylesheet">
+    <link href="assets/css/nice-select.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #9c6ade;
+            --primary-light: #e6d5ff;
+            --secondary: #f0e6ff;
+            --text: #333;
+            --light-text: #666;
+            --bg: #fff;
+            --section-bg: #f9f9f9;
+            --warning-bg: #fff8e1;
+            --warning-border: #ffc107;
+        }
+
+          .logo-slider {
+            width: 100%;
+            overflow: hidden;
+            white-space: nowrap;
+            position: relative;
+            margin: 20px 0;
+            background: #ffffff;
+            padding: 10px 0;
+        }
+        
+        .logo-slider:hover .logo-slide {
+            animation-play-state: paused;
+        }
+        
+        .logo-slide {
+            display: inline-block;
+            animation: 20s slide infinite linear;
+        }
+        
+        .logo-slide img {
+            height: 80px;
+            margin: 0 40px;
+            filter: grayscale(0%);
+            transition: filter 0.3s;
+        }
+        
+        .logo-slide img:hover {
+            filter: grayscale(0%);
+        }
+        
+        @keyframes slide {
+            from {
+                transform: translateX(0);
+            }
+            to {
+                transform: translateX(-100%);
+            }
+        }
+
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            color: var(--text);
+            background: var(--bg);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background: var(--primary);
+            color: white;
+            padding: 25px 0;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+        }
+        
+        h2 {
+            font-size: 1.8rem;
+            margin: 25px 0 15px;
+            color: var(--primary);
+        }
+        
+        h3 {
+            font-size: 1.4rem;
+            margin: 20px 0 10px;
+        }
+        
+        .intro {
+            text-align: center;
+            padding: 30px 0;
+            background: var(--section-bg);
+        }
+        
+        .calculator-section {
+            padding: 30px 0;
+        }
+        
+        .calculator-box {
+            background: var(--secondary);
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+        
+        input, select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        
+        button {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        button:hover {
+            background: #7d4fc4;
+            transform: translateY(-2px);
+        }
+        
+        .results {
+            display: none;
+            margin-top: 30px;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .calendar {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        .calendar th {
+            background: var(--primary);
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+        
+        .calendar td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+            height: 40px;
+            position: relative;
+        }
+        
+        .period-day {
+            background: var(--primary-light);
+            font-weight: bold;
+        }
+        
+        .period-day::after {
+            content: '';
+            position: absolute;
+            bottom: 2px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 6px;
+            height: 6px;
+            background: var(--primary);
+            border-radius: 50%;
+        }
+        
+        .today {
+            background: #ff3b6c;
+            font-weight: bold;
+        }
+        
+        .other-month {
+            color: #aaa;
+            background: #f9f9f9;
+        }
+        
+        .faq-section {
+            padding: 30px 0;
+            background: var(--section-bg);
+        }
+        
+        .faq-item {
+            margin-bottom: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        .faq-question {
+            padding: 15px 20px;
+            background: var(--primary);
+            color: white;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .faq-answer {
+            padding: 20px;
+            display: none;
+        }
+        
+        .faq-answer.active {
+            display: block;
+        }
+        
+        .disclaimer {
+            background: var(--warning-bg);
+            border-left: 4px solid var(--warning-border);
+            padding: 15px;
+            margin: 20px 0;
+            font-size: 0.9rem;
+        }
+        
+        .disclaimer h3 {
+            color: var(--primary);
+            margin-top: 0;
+        }
+        
+        @media (max-width: 768px) {
+            h1 { font-size: 1.8rem; }
+            h2 { font-size: 1.5rem; }
+            .calculator-box { padding: 15px; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- start page-wrapper -->
+    <div class="page-wrapper">
+        <!-- start preloader 
+        <div class="preloader">
+            <div class="sk-folding-cube">
+                <div class="sk-cube1 sk-cube"></div>
+                <div class="sk-cube2 sk-cube"></div>
+                <div class="sk-cube4 sk-cube"></div>
+                <div class="sk-cube3 sk-cube"></div>
+            </div>
+        </div>
+         end preloader -->
+        <!-- Start header -->
+        <header id="header" class="wpo-site-header wpo-header-style-3">
+            <div class="topbar">
+                <div class="container">
+                    <div class="row">
+                        <div class="col col-md-6 col-sm-7 col-12">
+                        </div>
+                         <!-- <div class="col col-md-6 col-sm-5 col-12">
+                        </div>-->
+                    </div>
+                </div>
+            </div>  <!-- end topbar -->
+            <nav class="navigation navbar navbar-default">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="open-btn">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="index.html"><img src="assets/images/jali.png" alt="logo"></a>
+                    </div>
+                    <div id="navbar" class="navbar-collapse collapse navbar-right navigation-holder">
+                        <button class="close-navbar"><i class="ti-close"></i></button>
+                        <ul class="nav navbar-nav">
+                            <li class="menu-item-has-children">
+                                <a href="#">Who we are</a>
+                                <ul class="sub-menu">
+                                    <li><a href="about.html">About us </a></li>
+                                    <li><a href="index-2.html">Meet the team</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="products.html">Our Products</a></li>
+                            <li><a href="period-calculator.html">period calculator</a></li>
+                            <li class="menu-item-has-children">
+                                <a href="error.html">Training</a>
+                            </li>
+                            <li class="menu-item-has-children">
+                                <a href="error.html">Impact</a>
+                                <ul class="sub-menu">
+                                    <li><a href="error.html">Impact</a></li>
+                                    <li><a href="error.html">Training</a></li>
+                                    <li><a href="error.html">Our clients</a></li>
+                                </ul>
+                            </li>
+                            <li class="menu-item-has-children">
+                                <a href="#">Blog</a>
+                                <ul class="sub-menu">
+                                    <li><a href="blog.html">News</a></li>
+                                    <li><a href="blog.html">Blog</a></li>
+                                    <li class="menu-item-has-children">
+                                    </li>
+                                </ul>
+                            </li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div><!-- end of nav-collapse -->
+                    <div class="cart-search-contact">
+                        <div class="mini-cart">
+                            <button class="cart-toggle-btn"> <i class="fi flaticon-shopping-bag"></i> <span class="cart-count">02</span></button>
+                            <div class="mini-cart-content">
+                                <div class="mini-cart-title">
+                                    <p>Shopping Cart</p>
+                                </div>
+                                <div class="mini-cart-items">
+                                    <div class="mini-cart-item clearfix">
+                                        <div class="mini-cart-item-image">
+                                            <a href="#"><img src="assets/images/shop/mini/image-1.jpg" alt="Hoodie with zipper"></a>
+                                        </div>
+                                        <div class="mini-cart-item-des">
+                                            <a href="#">Afyaplus pads pack of four</a>
+                                            <span class="mini-cart-item-price">TSH 15,000</span>
+                                            <span class="mini-cart-item-quantity">x 1</span>
+                                        </div>
+                                    </div>
+                                    <div class="mini-cart-item clearfix">
+                                        <div class="mini-cart-item-image">
+                                            <a href="#"><img src="assets/images/shop/mini/image-2.jpg" alt="Hoodie with zipper"></a>
+                                        </div>
+                                        <div class="mini-cart-item-des">
+                                            <a href="#">Afyaplus pads pack of two</a>
+                                            <span class="mini-cart-item-price">TSH 8500</span>
+                                            <span class="mini-cart-item-quantity">x 1</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mini-cart-action clearfix">
+                                    <span class="mini-checkout-price">TSH 750,000</span>
+                                    <a href="products.html" class="theme-btn-s4">View Cart</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="header-search-form-wrapper">
+                            <button class="search-toggle-btn"><i class="fi flaticon-magnifying-glass"></i></button>
+                            <div class="header-search-form">
+                                <form>
+                                    <div>
+                                        <input type="text" class="form-control" placeholder="Search here...">
+                                        <button type="submit"><i class="fi flaticon-magnifying-glass"></i></button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- end of container -->
+            </nav>
+       <!-- <div class="container">
+            <h1></h1>
+            <p></p>
+        </div> -->
+    </header>
+
+      <!-- end of header -->
+        <!-- .wpo-breadcumb-area start -->
+        <div class="wpo-breadcumb-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="wpo-breadcumb-wrap">
+                            <h2>Menstrual Health & Period Tracker</h2>
+                            <ul>
+                                <li><a href="index.html">Home</a></li>
+                                <li><span>Empowering you with cycle knowledge and hygiene resources</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- .wpo-breadcumb-area end -->
+    
+    <section class="intro">
+        <div class="container">
+            <p>Track your menstrual cycle, understand your body better, and discover sustainable period care options.</p>
+        </div>
+    </section>
+    
+    <section class="calculator-section">
+        <div class="container">
+            <h2>Period Calculator</h2>
+            <div class="calculator-box">
+                <form id="periodForm">
+                    <div class="form-group">
+                        <label for="lastPeriod">First day of last period:</label>
+                        <input type="date" id="lastPeriod" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="cycleLength">Average cycle length:</label>
+                        <select id="cycleLength" required>
+                            <option value="">Select days</option>
+                            <option value="21">21 days</option>
+                            <option value="22">22 days</option>
+                            <option value="23">23 days</option>
+                            <option value="24">24 days</option>
+                            <option value="25">25 days</option>
+                            <option value="26" selected>26 days</option>
+                            <option value="27">27 days</option>
+                            <option value="28">28 days</option>
+                            <option value="29">29 days</option>
+                            <option value="30">30 days</option>
+                            <option value="31">31 days</option>
+                            <option value="32">32 days</option>
+                            <option value="33">33 days</option>
+                            <option value="34">34 days</option>
+                            <option value="35">35 days</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="periodLength">Average period duration:</label>
+                        <select id="periodLength" required>
+                            <option value="">Select days</option>
+                            <option value="3">3 days</option>
+                            <option value="4">4 days</option>
+                            <option value="5" selected>5 days</option>
+                            <option value="6">6 days</option>
+                            <option value="7">7 days</option>
+                            <option value="8">8 days</option>
+                            <option value="9">9 days</option>
+                            <option value="10">10 days</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="forecastMonths">Forecast duration:</label>
+                        <select id="forecastMonths" required>
+                            <option value="1">1 month</option>
+                            <option value="2">2 months</option>
+                            <option value="3" selected>3 months</option>
+                            <option value="4">4 months</option>
+                            <option value="5">5 months</option>
+                            <option value="6">6 months</option>
+                        </select>
+                    </div>
+                    
+                    <button type="submit">Calculate My Cycle</button>
+                </form>
+                
+                <div id="results" class="results">
+                    <h3>Your Period Forecast</h3>
+                    <div id="calendarContainer"></div>
+                    <div id="nextPeriodInfo"></div>
+                    
+                    <div class="disclaimer">
+                        <h3>Your Privacy is Important to Us – Disclaimer!</h3>
+                        <p>This tool is not intended to be medical advice and should not be used to prevent pregnancy. Results are estimates and may vary for each woman. Your privacy is important to us and we want to ensure you have control over your data. The information you provide will be used to personalize your experience with High Quality Jamii Afyaplus brands.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="faq-section">
+        <div class="container">
+            <h2>Menstrual Health FAQs</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">What is a normal menstrual cycle?</div>
+                <div class="faq-answer">
+                    <p>A normal menstrual cycle ranges from 21-35 days, counting from the first day of one period to the first day of the next. The average is 28 days, but every woman's cycle is unique. Cycles may vary due to stress, diet, exercise, or health conditions.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">How can I practice good menstrual hygiene?</div>
+                <div class="faq-answer">
+                    <p>Essential hygiene practices include:</p>
+                    <ul>
+                        <li>Change products every 4-6 hours (pads/tampons)</li>
+                        <li>Wash hands before/after changing products</li>
+                        <li>Clean genital area twice daily with water</li>
+                        <li>Wear clean cotton underwear</li>
+                        <li>Dispose of products properly</li>
+                        <li>Stay hydrated and eat nutritious foods</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">How do reusable pads work?</div>
+                <div class="faq-answer">
+                    <p>Reusable cloth pads are eco-friendly alternatives that last 2-5 years:</p>
+                    <ol>
+                        <li>Choose appropriate absorbency</li>
+                        <li>Attach to underwear with snaps/wings</li>
+                        <li>Change when full (4-6 hours)</li>
+                        <li>Rinse immediately in cold water</li>
+                        <li>Wash with mild soap (hand or machine)</li>
+                        <li>Air dry completely before reuse</li>
+                    </ol>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">How accurate is the period calculator?</div>
+                <div class="faq-answer">
+                    <p>The calculator provides estimates based on your average cycle length. Accuracy depends on cycle regularity - factors like stress, illness, or lifestyle changes can affect your cycle. Tracking your actual periods helps improve predictions.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Why choose reusable menstrual products?</div>
+                <div class="faq-answer">
+                    <p>Benefits include:</p>
+                    <ul>
+                        <li><strong>Savings:</strong> Cost-effective long-term</li>
+                        <li><strong>Eco-friendly:</strong> Reduces waste</li>
+                        <li><strong>Comfort:</strong> Softer, breathable materials</li>
+                        <li><strong>Health:</strong> Fewer chemicals, less irritation</li>
+                        <li><strong>Convenience:</strong> Always available</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">How should I care for reusable pads?</div>
+                <div class="faq-answer">
+                    <p>Proper care extends pad life:</p>
+                    <ol>
+                        <li>Rinse immediately after use</li>
+                        <li>Soak in cold water with vinegar for stains</li>
+                        <li>Wash with mild detergent (no softeners)</li>
+                        <li>Sun dry for natural disinfection</li>
+                        <li>Store in clean, dry place</li>
+                    </ol>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">What if my periods are irregular?</div>
+                <div class="faq-answer">
+                    <p>For irregular cycles (varying by 7+ days):</p>
+                    <ul>
+                        <li>Track cycles for several months</li>
+                        <li>Maintain healthy lifestyle</li>
+                        <li>Manage stress effectively</li>
+                        <li>Achieve healthy weight</li>
+                        <li>Consult a doctor if issues persist</li>
+                    </ul>
+                    <p>Possible causes include PCOS, thyroid issues, or perimenopause.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+       <div class="wpo-ne-footer">
+            <!-- start wpo-news-letter-section -->
+            <section class="wpo-news-letter-section">
+                <div class="container">
+                    <div class="row">
+                        <div class="col col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+                            <div class="wpo-newsletter">
+                                <h3>Follow us for more information</h3>
+                                <div class="wpo-newsletter-form">
+                                    <form>
+                                        <div>
+                                            <input type="text" placeholder="Enter Your Email" class="form-control">
+                                            <button type="submit">Subscribe</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> <!-- end container -->
+            </section>
+            <!-- end wpo-news-letter-section -->
+            <!-- start wpo-site-footer -->
+            <footer class="wpo-site-footer">
+                <div class="wpo-upper-footer">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col col-lg-3 col-md-3 col-sm-6">
+                                <div class="widget about-widget">
+                                    <div class="logo widget-title">
+                                        <img src="assets/images/logo-2.png" alt="blog">
+                                    </div>
+                                    <p>Afyaplus pads are sustainable solution offer providing long-lasting protection, reduce waste, and help you save costs. </p>
+                                    <ul>
+                                        <li><a href="https://www.facebook.com/p/AfyaplusPads-100063977850113/"><i class="ti-facebook"></i></a></li>
+                                        <li><a href="https://x.com/search?q=afyaplus%20pads&src=typed_query"><i class="ti-twitter-alt"></i></a></li>
+                                        <li><a href="https://www.instagram.com/afyapluspads/"><i class="ti-instagram"></i></a></li>
+                                        <li><a href="https://www.linkedin.com/company/afyaplus-organization/posts/?feedView=all"><i class="ti-linkedIn"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col col-lg-3 col-md-3 col-sm-6">
+                                <div class="widget link-widget resource-widget">
+                                    <div class="widget-title">
+                                        <h3>Top News</h3>
+                                    </div>
+                                    <div class="news-wrap">
+                                        <div class="news-img">
+                                            <img src="assets/images/footer/2.jpg" alt="">
+                                        </div>
+                                        <div class="news-text">
+                                            <h3>JALI Distributed Afyaplus pads in Manyara region</h3>
+                                            <span>12 March, 2023</span>
+                                        </div>
+                                    </div>
+                                    <div class="news-wrap">
+                                        <div class="news-img">
+                                            <img src="assets/images/footer/1.jpg" alt="">
+                                        </div>
+                                        <div class="news-text">
+                                            <h3>TAWASANET Visits JALI</h3>
+                                            <span>14 June, 2024</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col col-lg-2 col-md-3 col-sm-6">
+                                <div class="widget link-widget">
+                                    <div class="widget-title">
+                                        <h3>Useful Links</h3>
+                                    </div>
+                                    <ul>
+                                        <li><a href="about.html">About Us</a></li>
+                                        <li><a href="products.html">Our products</a></li>
+                                        <li><a href="blog.html">Blog</a></li>
+                                        <li><a href="contact.html">Contact Us</a></li>
+                                        <li><a href="causes.html">MHH education</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col col-lg-3 col-lg-offset-1 col-md-3 col-sm-6">
+                                <div class="widget market-widget wpo-service-link-widget">
+                                    <div class="widget-title">
+                                        <h3>Contact </h3>
+                                    </div>
+                                    <p>Be a part of change by contact us</p>
+                                    <div class="contact-ft">
+                                        <ul>
+                                            <li><i class="fi flaticon-pin"></i>BOX 1562 SIDO, Iringa, Tanzania</li>
+                                            <li><i class="fi flaticon-call"></i>+0 (255) 756 825 134</li>
+                                            <li><i class="fi flaticon-envelope"></i>info@afyapluspads.com</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> <!-- end container -->
+                </div>
+                <div class="wpo-lower-footer">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col col-xs-12">
+                                <p class="copyright">&copy; 2025 JALI ICT DEPARTMENT.  All rights reserved</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+            <!-- end wpo-site-footer -->
+        </div>
+    </div>
+
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // FAQ toggle functionality
+            document.querySelectorAll('.faq-question').forEach(question => {
+                question.addEventListener('click', () => {
+                    question.nextElementSibling.classList.toggle('active');
+                });
+            });
+            
+            // Period calculator form
+            document.getElementById('periodForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                calculateCycle();
+            });
+        });
+        
+        function calculateCycle() {
+            // Get input values
+            const lastPeriod = new Date(document.getElementById('lastPeriod').value);
+            const cycleDays = parseInt(document.getElementById('cycleLength').value);
+            const periodDays = parseInt(document.getElementById('periodLength').value);
+            const forecastMonths = parseInt(document.getElementById('forecastMonths').value);
+            
+            // Validate inputs
+            if (isNaN(lastPeriod.getTime()) || isNaN(cycleDays) || isNaN(periodDays) || isNaN(forecastMonths)) {
+                alert('Please complete all fields correctly.');
+                return;
+            }
+            
+            // Calculate future periods
+            const periods = [];
+            const today = new Date();
+            today.setHours(0, 0, 0, 0);
+            
+            for (let i = 1; i <= forecastMonths; i++) {
+                const start = new Date(lastPeriod);
+                start.setDate(start.getDate() + (cycleDays * i));
+                
+                const end = new Date(start);
+                end.setDate(end.getDate() + periodDays - 1);
+                
+                periods.push({
+                    start: new Date(start),
+                    end: new Date(end)
+                });
+            }
+            
+            // Display results
+            showResults(periods, today);
+        }
+        
+        function showResults(periods, today) {
+            const results = document.getElementById('results');
+            const calendarContainer = document.getElementById('calendarContainer');
+            const nextPeriodInfo = document.getElementById('nextPeriodInfo');
+            
+            results.style.display = 'block';
+            calendarContainer.innerHTML = '';
+            
+            // Show next period info
+            if (periods.length > 0) {
+                const next = periods[0];
+                const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+                
+                nextPeriodInfo.innerHTML = `
+                    <p><strong>Next period:</strong> ${next.start.toLocaleDateString('en-US', options)} to ${next.end.toLocaleDateString('en-US', options)}</p>
+                    <p><strong>Fertile window:</strong> ${getFertileWindow(next.start)}</p>
+                `;
+            }
+            
+            // Generate calendars
+            periods.forEach(period => {
+                const month = period.start.getMonth();
+                const year = period.start.getFullYear();
+                
+                const monthDiv = document.createElement('div');
+                monthDiv.className = 'month-calendar';
+                monthDiv.innerHTML = `<h4>${new Date(year, month).toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}</h4>`;
+                
+                const table = document.createElement('table');
+                table.className = 'calendar';
+                
+                // Create header
+                const header = document.createElement('tr');
+                ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].forEach(day => {
+                    const th = document.createElement('th');
+                    th.textContent = day;
+                    header.appendChild(th);
+                });
+                table.appendChild(header);
+                
+                // Create calendar days
+                const firstDay = new Date(year, month, 1);
+                const lastDay = new Date(year, month + 1, 0);
+                const totalDays = lastDay.getDate();
+                
+                let date = 1;
+                let startingDay = firstDay.getDay();
+                
+                for (let i = 0; i < 6; i++) {
+                    if (date > totalDays) break;
+                    
+                    const row = document.createElement('tr');
+                    
+                    for (let j = 0; j < 7; j++) {
+                        const cell = document.createElement('td');
+                        
+                        if (i === 0 && j < startingDay) {
+                            // Previous month days
+                            const prevDay = new Date(year, month, 0).getDate() - (startingDay - j - 1);
+                            cell.textContent = prevDay;
+                            cell.className = 'other-month';
+                        } else if (date > totalDays) {
+                            // Next month days
+                            const nextDay = date - totalDays;
+                            cell.textContent = nextDay;
+                            cell.className = 'other-month';
+                            date++;
+                        } else {
+                            // Current month days
+                            cell.textContent = date;
+                            
+                            // Highlight today
+                            if (date === today.getDate() && month === today.getMonth() && year === today.getFullYear()) {
+                                cell.classList.add('today');
+                            }
+                            
+                            // Highlight period days
+                            if (date >= period.start.getDate() && date <= period.end.getDate() && 
+                                month === period.start.getMonth() && year === period.start.getFullYear()) {
+                                cell.classList.add('period-day');
+                            }
+                            
+                            date++;
+                        }
+                        
+                        row.appendChild(cell);
+                    }
+                    
+                    table.appendChild(row);
+                }
+                
+                monthDiv.appendChild(table);
+                calendarContainer.appendChild(monthDiv);
+            });
+            
+            // Scroll to results
+            results.scrollIntoView({ behavior: 'smooth' });
+        }
+        
+        function getFertileWindow(startDate) {
+            // Simplified fertile window calculation (days 10-17 of cycle)
+            const ovulation = startDate.getDate() - 14;
+            const fertileStart = ovulation - 3;
+            const fertileEnd = ovulation + 3;
+            
+            const start = new Date(startDate);
+            start.setDate(fertileStart);
+            
+            const end = new Date(startDate);
+            end.setDate(fertileEnd);
+            
+            return `${start.toLocaleDateString('en-US', { month: 'short', day: 'numeric' })} to ${end.toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}`;
+        }
+    </script>
+</body>
+</html>

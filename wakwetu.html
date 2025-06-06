@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoMenstrual - Reusable Sanitary Pads</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        :root {
+            --primary: #E83A6F; /* Pink similar to Afripads */
+            --secondary: #2D9CDB; /* Blue accent */
+            --dark: #333333;
+            --light: #F8F8F8;
+            --gray: #E0E0E0;
+            --white: #FFFFFF;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+        }
+        
+        /* Header Styles */
+        
+        .cart-count {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background-color: var(--primary);
+            color: white;
+            border-radius: 50%;
+            width: 18px;
+            height: 18px;
+            font-size: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            padding: 0 20px;
+        }
+        
+        .hero h1 {
+            font-size: 42px;
+            margin-bottom: 15px;
+        }
+        
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 25px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 16px;
+        }
+        
+        .btn:hover {
+            background-color: #d42a5c;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(232, 58, 111, 0.3);
+        }
+        
+        /* Products Section */
+        .products-section {
+            max-width: 1200px;
+            margin: 0 auto 80px;
+            padding: 0 20px;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .section-title h2 {
+            font-size: 32px;
+            color: var(--dark);
+            margin-bottom: 15px;
+        }
+        
+        .section-title p {
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        
+        .product-card {
+            background: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+        
+        .product-badge {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: var(--secondary);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 600;
+            z-index: 1;
+        }
+        
+        .product-image {
+            height: 250px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .product-card:hover .product-image img {
+            transform: scale(1.05);
+        }
+        
+        .product-info {
+            padding: 20px;
+        }
+        
+        .product-title {
+            font-size: 18px;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        
+        .product-desc {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+        
+        .product-price {
+            font-size: 20px;
+            font-weight: bold;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+        
+        .product-actions {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .btn-outline {
+            background: transparent;
+            border: 1px solid var(--primary);
+            color: var(--primary);
+            flex: 1;
+            text-align: center;
+            padding: 10px;
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        .btn-solid {
+            background-color: var(--primary);
+            color: white;
+            flex: 1;
+            text-align: center;
+            padding: 10px;
+        }
+        
+        /* Shopping Cart Sidebar */
+        .cart-sidebar {
+            position: fixed;
+            top: 0;
+            right: -400px;
+            width: 400px;
+            height: 100vh;
+            background-color: var(--white);
+            box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+            transition: right 0.3s ease;
+            z-index: 1000;
+            overflow-y: auto;
+        }
+        
+        .cart-sidebar.open {
+            right: 0;
+        }
+        
+        .cart-header {
+            padding: 20px;
+            border-bottom: 1px solid var(--gray);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .cart-header h3 {
+            font-size: 20px;
+        }
+        
+        .close-cart {
+            font-size: 24px;
+            cursor: pointer;
+        }
+        
+        .cart-items {
+            padding: 20px;
+        }
+        
+        .cart-item {
+            display: flex;
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--gray);
+        }
+        
+        .cart-item-image {
+            width: 80px;
+            height: 80px;
+            margin-right: 15px;
+        }
+        
+        .cart-item-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 4px;
+        }
+        
+        .cart-item-details {
+            flex: 1;
+        }
+        
+        .cart-item-title {
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
+        
+        .cart-item-price {
+            font-size: 14px;
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        
+        .cart-item-quantity {
+            display: flex;
+            align-items: center;
+        }
+        
+        .quantity-btn {
+            width: 25px;
+            height: 25px;
+            background-color: var(--gray);
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .quantity-input {
+            width: 40px;
+            height: 25px;
+            text-align: center;
+            border: 1px solid var(--gray);
+            margin: 0 5px;
+        }
+        
+        .remove-item {
+            color: #999;
+            font-size: 12px;
+            cursor: pointer;
+            margin-top: 5px;
+            display: inline-block;
+        }
+        
+        .cart-summary {
+            padding: 20px;
+            border-top: 1px solid var(--gray);
+        }
+        
+        .cart-total {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            font-size: 18px;
+            font-weight: 600;
+        }
+        
+        .checkout-btn {
+            width: 100%;
+            padding: 12px;
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: background-color 0.3s;
+        }
+        
+        .checkout-btn:hover {
+            background-color: #d42a5c;
+        }
+        
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            z-index: 999;
+            display: none;
+        }
+        
+        .overlay.active {
+            display: block;
+        }
+        
+        /* Responsive Styles */
+            
+            .hero h1 {
+                font-size: 36px;
+            }
+            
+            .cart-sidebar {
+                width: 350px;
+            }
+
+        
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .nav-links {
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .hero {
+                height: 350px;
+            }
+            
+            .hero h1 {
+                font-size: 32px;
+            }
+            
+            .hero p {
+                font-size: 16px;
+            }
+            
+            .product-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+            
+            .cart-sidebar {
+                width: 100%;
+                max-width: 350px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero {
+                height: 300px;
+            }
+            
+            .hero h1 {
+                font-size: 28px;
+            }
+            
+            .product-actions {
+                flex-direction: column;
+            }
+            
+            .footer-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Reusable Sanitary Pads</h1>
+            <p>Comfortable, eco-friendly menstrual solutions that last for years</p>
+            <a href="#products" class="btn">Shop Now</a>
+        </div>
+    </section>
+    
+    <!-- Products Section -->
+    <section class="products-section" id="products">
+        <div class="section-title">
+            <h2>Our Products</h2>
+            <p>High-quality reusable sanitary pads designed for comfort, reliability, and environmental sustainability</p>
+        </div>
+        
+        <div class="product-grid">
+            <!-- Product 1 -->
+            <div class="product-card">
+                <div class="product-badge">Best Seller</div>
+                <div class="product-image">
+                    <img src="https://images.unsplash.com/photo-1591348278863-a8fb3887e2aa?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" alt="Regular Flow Kit">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Regular Flow Kit</h3>
+                    <p class="product-desc">Perfect for medium flow days. Includes 3 pads and a waterproof carrying pouch.</p>
+                    <div class="product-price">TZS 18,000</div>
+                    <div class="product-actions">
+                        <button class="btn-outline" onclick="viewDetails(1)">Details</button>
+                        <button class="btn-solid" onclick="addToCart(1)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Product 2 -->
+            <div class="product-card">
+                <div class="product-badge">New</div>
+                <div class="product-image">
+                    <img src="https://images.unsplash.com/photo-1583947581924-a31d2586b7e3?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" alt="Heavy Flow Kit">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Heavy Flow Kit</h3>
+                    <p class="product-desc">Extra absorbent pads for heavy flow days. Includes 3 pads and storage bag.</p>
+                    <div class="product-price">TZS 22,000</div>
+                    <div class="product-actions">
+                        <button class="btn-outline" onclick="viewDetails(2)">Details</button>
+                        <button class="btn-solid" onclick="addToCart(2)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Product 3 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://images.unsplash.com/photo-1591348278997-7ce3084980c6?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" alt="Pantyliner Kit">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Pantyliner Kit</h3>
+                    <p class="product-desc">Lightweight liners for everyday freshness. Pack of 5 liners with carrying case.</p>
+                    <div class="product-price">TZS 12,000</div>
+                    <div class="product-actions">
+                        <button class="btn-outline" onclick="viewDetails(3)">Details</button>
+                        <button class="btn-solid" onclick="addToCart(3)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Product 4 -->
+            <div class="product-card">
+                <div class="product-badge">Value Pack</div>
+                <div class="product-image">
+                    <img src="https://images.unsplash.com/photo-1583947581924-a31d2586b7e3?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" alt="Complete Kit">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Complete Kit</h3>
+                    <p class="product-desc">Everything you need for your cycle. 2 regular, 2 heavy pads, and 2 liners.</p>
+                    <div class="product-price">TZS 35,000</div>
+                    <div class="product-actions">
+                        <button class="btn-outline" onclick="viewDetails(4)">Details</button>
+                        <button class="btn-solid" onclick="addToCart(4)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Product 5 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://images.unsplash.com/photo-1591348278863-a8fb3887e2aa?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" alt="Starter Kit">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Starter Kit</h3>
+                    <p class="product-desc">Begin your reusable journey. 1 regular, 1 heavy pad, and 1 liner.</p>
+                    <div class="product-price">TZS 15,000</div>
+                    <div class="product-actions">
+                        <button class="btn-outline" onclick="viewDetails(5)">Details</button>
+                        <button class="btn-solid" onclick="addToCart(5)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Product 6 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://images.unsplash.com/photo-1583947581924-a31d2586b7e3?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" alt="Travel Kit">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Travel Kit</h3>
+                    <p class="product-desc">Compact set for on-the-go. 2 regular pads and a discreet waterproof bag.</p>
+                    <div class="product-price">TZS 16,000</div>
+                    <div class="product-actions">
+                        <button class="btn-outline" onclick="viewDetails(6)">Details</button>
+                        <button class="btn-solid" onclick="addToCart(6)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Shopping Cart Sidebar -->
+    <div class="overlay" id="overlay"></div>
+    
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3>Your Cart</h3>
+            <span class="close-cart" id="closeCart">&times;</span>
+        </div>
+        
+        <div class="cart-items" id="cartItems">
+            <!-- Cart items will be added here dynamically -->
+            <p class="empty-cart-message">Your cart is empty</p>
+        </div>
+        
+        <div class="cart-summary">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cartTotal">TZS 0</span>
+            </div>
+            <button class="checkout-btn">Proceed to Checkout</button>
+        </div>
+    </div>
+    
+    <script>
+        // Sample product data
+        const products = {
+            1: { id: 1, name: "Regular Flow Kit", price: 18000, image: "https://images.unsplash.com/photo-1591348278863-a8fb3887e2aa?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" },
+            2: { id: 2, name: "Heavy Flow Kit", price: 22000, image: "https://images.unsplash.com/photo-1583947581924-a31d2586b7e3?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" },
+            3: { id: 3, name: "Pantyliner Kit", price: 12000, image: "https://images.unsplash.com/photo-1591348278997-7ce3084980c6?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" },
+            4: { id: 4, name: "Complete Kit", price: 35000, image: "https://images.unsplash.com/photo-1583947581924-a31d2586b7e3?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" },
+            5: { id: 5, name: "Starter Kit", price: 15000, image: "https://images.unsplash.com/photo-1591348278863-a8fb3887e2aa?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" },
+            6: { id: 6, name: "Travel Kit", price: 16000, image: "https://images.unsplash.com/photo-1583947581924-a31d2586b7e3?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" }
+        };
+        
+        // Cart functionality
+        let cart = [];
+        
+        // DOM elements
+        const cartIcon = document.getElementById('cartIcon');
+        const cartSidebar = document.getElementById('cartSidebar');
+        const closeCart = document.getElementById('closeCart');
+        const overlay = document.getElementById('overlay');
+        const cartItems = document.getElementById('cartItems');
+        const cartTotal = document.getElementById('cartTotal');
+        const cartCount = document.querySelector('.cart-count');
+        
+        // Toggle cart sidebar
+        cartIcon.addEventListener('click', () => {
+            cartSidebar.classList.add('open');
+            overlay.classList.add('active');
+        });
+        
+        closeCart.addEventListener('click', () => {
+            cartSidebar.classList.remove('open');
+            overlay.classList.remove('active');
+        });
+        
+        overlay.addEventListener('click', () => {
+            cartSidebar.classList.remove('open');
+            overlay.classList.remove('active');
+        });
+        
+        // Add to cart function
+        function addToCart(productId) {
+            const product = products[productId];
+            const existingItem = cart.find(item => item.id === productId);
+            
+            if (existingItem) {
+                existingItem.quantity += 1;
+            } else {
+                cart.push({
+                    id: product.id,
+                    name: product.name,
+                    price: product.price,
+                    image: product.image,
+                    quantity: 1
+                });
+            }
+            
+            updateCart();
+            cartSidebar.classList.add('open');
+            overlay.classList.add('active');
+            
+            // Show added to cart animation
+            const btn = event.target;
+            btn.textContent = 'Added!';
+            btn.style.backgroundColor = '#2D9CDB';
+            setTimeout(() => {
+                btn.textContent = 'Add to Cart';
+                btn.style.backgroundColor = '';
+            }, 1000);
+        }
+        
+        // Update cart UI
+        function updateCart() {
+            // Update cart items
+            if (cart.length === 0) {
+                cartItems.innerHTML = '<p class="empty-cart-message">Your cart is empty</p>';
+            } else {
+                cartItems.innerHTML = cart.map(item => `
+                    <div class="cart-item" data-id="${item.id}">
+                        <div class="cart-item-image">
+                            <img src="${item.image}" alt="${item.name}">
+                        </div>
+                        <div class="cart-item-details">
+                            <h4 class="cart-item-title">${item.name}</h4>
+                            <div class="cart-item-price">TZS ${item.price.toLocaleString()}</div>
+                            <div class="cart-item-quantity">
+                                <button class="quantity-btn minus">-</button>
+                                <input type="text" class="quantity-input" value="${item.quantity}" readonly>
+                                <button class="quantity-btn plus">+</button>
+                            </div>
+                            <span class="remove-item">Remove</span>
+                        </div>
+                    </div>
+                `).join('');
+                
+                // Add event listeners to quantity buttons
+                document.querySelectorAll('.quantity-btn.minus').forEach(btn => {
+                    btn.addEventListener('click', decreaseQuantity);
+                });
+                
+                document.querySelectorAll('.quantity-btn.plus').forEach(btn => {
+                    btn.addEventListener('click', increaseQuantity);
+                });
+                
+                document.querySelectorAll('.remove-item').forEach(btn => {
+                    btn.addEventListener('click', removeItem);
+                });
+            }
+            
+            // Update cart total
+            const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+            cartTotal.textContent = `TZS ${total.toLocaleString()}`;
+            
+            // Update cart count
+            const count = cart.reduce((sum, item) => sum + item.quantity, 0);
+            cartCount.textContent = count;
+        }
+        
+        // Quantity functions
+        function decreaseQuantity() {
+            const itemId = parseInt(this.closest('.cart-item').dataset.id);
+            const item = cart.find(item => item.id === itemId);
+            
+            if (item.quantity > 1) {
+                item.quantity -= 1;
+            } else {
+                cart = cart.filter(item => item.id !== itemId);
+            }
+            
+            updateCart();
+        }
+        
+        function increaseQuantity() {
+            const itemId = parseInt(this.closest('.cart-item').dataset.id);
+            const item = cart.find(item => item.id === itemId);
+            item.quantity += 1;
+            updateCart();
+        }
+        
+        function removeItem() {
+            const itemId = parseInt(this.closest('.cart-item').dataset.id);
+            cart = cart.filter(item => item.id !== itemId);
+            updateCart();
+        }
+        
+        // View details function (would link to product detail page)
+        function viewDetails(productId) {
+            alert(`Viewing details for product ${productId}`);
+            // In a real implementation, this would redirect to a product detail page
+            // window.location.href = `product.html?id=${productId}`;
+        }
+    </script>
+</body>
+</html>

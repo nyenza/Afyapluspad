@@ -1,0 +1,1038 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="wpoceans">
+    <title>Afyaplus pads website</title>
+    <link href="assets/css/themify-icons.css" rel="stylesheet">
+    <link href="assets/css/font-awesome.min.css" rel="stylesheet">
+    <link href="assets/css/flaticon.css" rel="stylesheet">
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/animate.css" rel="stylesheet">
+    <link href="assets/css/owl.carousel.css" rel="stylesheet">
+    <link href="assets/css/owl.theme.css" rel="stylesheet">
+    <link href="assets/css/slick.css" rel="stylesheet">
+    <link href="assets/css/slick-theme.css" rel="stylesheet">
+    <link href="assets/css/swiper.min.css" rel="stylesheet">
+    <link href="assets/css/owl.transitions.css" rel="stylesheet">
+    <link href="assets/css/jquery.fancybox.css" rel="stylesheet">
+    <link href="assets/css/odometer-theme-default.css" rel="stylesheet">
+    <link href="assets/css/nice-select.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
+    <style>
+                .logo-slider {
+            width: 100%;
+            overflow: hidden;
+            white-space: nowrap;
+            position: relative;
+            margin: 20px 0;
+            background: #ffffff;
+            padding: 10px 0;
+        }
+        
+        .logo-slider:hover .logo-slide {
+            animation-play-state: paused;
+        }
+        
+        .logo-slide {
+            display: inline-block;
+            animation: 20s slide infinite linear;
+        }
+        
+        .logo-slide img {
+            height: 80px;
+            margin: 0 40px;
+            filter: grayscale(0%);
+            transition: filter 0.3s;
+        }
+        
+        .logo-slide img:hover {
+            filter: grayscale(0%);
+        }
+        
+        @keyframes slide {
+            from {
+                transform: translateX(0);
+            }
+            to {
+                transform: translateX(-100%);
+            }
+        }
+
+  :root {
+            --primary: #9957c8; /* Pink similar to Afripads */
+            --secondary: #2D9CDB; /* Blue accent */
+            --dark: #333333;
+            --light: #F8F8F8;
+            --gray: #E0E0E0;
+            --white: #FFFFFF;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+        }
+        
+        /* Header Styles */
+        
+        .cart-count {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background-color: var(--primary);
+            color: white;
+            border-radius: 50%;
+            width: 18px;
+            height: 18px;
+            font-size: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(assets/images/breadcumb/img-2.jpg);
+            background-size: cover;
+            background-position: center;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            padding: 0 20px;
+        }
+        
+        .hero h1 {
+            font-size: 42px;
+            margin-bottom: 15px;
+        }
+        
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 25px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 16px;
+        }
+        
+        .btn:hover {
+            background-color: #9957c8;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(232, 58, 111, 0.3);
+        }
+        
+        /* Products Section */
+        .products-section {
+            max-width: 1200px;
+            margin: 0 auto 80px;
+            padding: 0 20px;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .section-title h2 {
+            font-size: 32px;
+            color: var(--dark);
+            margin-bottom: 15px;
+        }
+        
+        .section-title p {
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        
+        .product-card {
+            background: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+        
+        .product-badge {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: var(--secondary);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 600;
+            z-index: 1;
+        }
+        
+        .product-image {
+            height: 250px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .product-card:hover .product-image img {
+            transform: scale(1.05);
+        }
+        
+        .product-info {
+            padding: 20px;
+        }
+        
+        .product-title {
+            font-size: 18px;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        
+        .product-desc {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+        
+        .product-price {
+            font-size: 20px;
+            font-weight: bold;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+        
+        .product-actions {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .btn-outline {
+            background: transparent;
+            border: 1px solid var(--primary);
+            color: var(--primary);
+            flex: 1;
+            text-align: center;
+            padding: 10px;
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        .btn-solid {
+            background-color: var(--primary);
+            color: white;
+            flex: 1;
+            text-align: center;
+            padding: 10px;
+        }
+        
+        /* Shopping Cart Sidebar */
+        .cart-sidebar {
+            position: fixed;
+            top: 0;
+            right: -400px;
+            width: 400px;
+            height: 100vh;
+            background-color: var(--white);
+            box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+            transition: right 0.3s ease;
+            z-index: 1000;
+            overflow-y: auto;
+        }
+        
+        .cart-sidebar.open {
+            right: 0;
+        }
+        
+        .cart-header {
+            padding: 20px;
+            border-bottom: 1px solid var(--gray);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .cart-header h3 {
+            font-size: 20px;
+        }
+        
+        .close-cart {
+            font-size: 24px;
+            cursor: pointer;
+        }
+        
+        .cart-items {
+            padding: 20px;
+        }
+        
+        .cart-item {
+            display: flex;
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--gray);
+        }
+        
+        .cart-item-image {
+            width: 80px;
+            height: 80px;
+            margin-right: 15px;
+        }
+        
+        .cart-item-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 4px;
+        }
+        
+        .cart-item-details {
+            flex: 1;
+        }
+        
+        .cart-item-title {
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
+        
+        .cart-item-price {
+            font-size: 14px;
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        
+        .cart-item-quantity {
+            display: flex;
+            align-items: center;
+        }
+        
+        .quantity-btn {
+            width: 25px;
+            height: 25px;
+            background-color: var(--gray);
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .quantity-input {
+            width: 40px;
+            height: 25px;
+            text-align: center;
+            border: 1px solid var(--gray);
+            margin: 0 5px;
+        }
+        
+        .remove-item {
+            color: #999;
+            font-size: 12px;
+            cursor: pointer;
+            margin-top: 5px;
+            display: inline-block;
+        }
+        
+        .cart-summary {
+            padding: 20px;
+            border-top: 1px solid var(--gray);
+        }
+        
+        .cart-total {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            font-size: 18px;
+            font-weight: 600;
+        }
+        
+        .checkout-btn {
+            width: 100%;
+            padding: 12px;
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: background-color 0.3s;
+        }
+        
+        .checkout-btn:hover {
+            background-color: #9957c8;
+        }
+        
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(199, 189, 219, 0.953);
+            z-index: 999;
+            display: none;
+        }
+        
+        .overlay.active {
+            display: block;
+        }
+        
+        /* Responsive Styles */
+            
+            .hero h1 {
+                font-size: 36px;
+            }
+            
+            .cart-sidebar {
+                width: 350px;
+            }
+
+        
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .nav-links {
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .hero {
+                height: 350px;
+            }
+            
+            .hero h1 {
+                font-size: 32px;
+            }
+            
+            .hero p {
+                font-size: 16px;
+            }
+            
+            .product-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+            
+            .cart-sidebar {
+                width: 100%;
+                max-width: 350px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero {
+                height: 300px;
+            }
+            
+            .hero h1 {
+                font-size: 28px;
+            }
+            
+            .product-actions {
+                flex-direction: column;
+            }
+            
+            .footer-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+    <!-- start page-wrapper -->
+        <!-- start page-wrapper -->
+    <div class="page-wrapper">
+        <!-- start preloader -->
+        <div class="preloader">
+            <div class="sk-folding-cube">
+                <div class="sk-cube1 sk-cube"></div>
+                <div class="sk-cube2 sk-cube"></div>
+                <div class="sk-cube4 sk-cube"></div>
+                <div class="sk-cube3 sk-cube"></div>
+            </div>
+        </div>
+        <!-- end preloader -->
+        <!-- Start header -->
+        <header id="header" class="wpo-site-header wpo-header-style-3">
+            <div class="topbar">
+                <div class="container">
+                    <div class="row">
+                        <div class="col col-md-6 col-sm-7 col-12">
+                        </div>
+                         <!-- <div class="col col-md-6 col-sm-5 col-12">
+                        </div>-->
+                    </div>
+                </div>
+            </div>  <!-- end topbar -->
+            <nav class="navigation navbar navbar-default">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="open-btn">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="index.html"><img src="assets/images/jali.png" alt="logo"></a>
+                    </div>
+                    <div id="navbar" class="navbar-collapse collapse navbar-right navigation-holder">
+                        <button class="close-navbar"><i class="ti-close"></i></button>
+                        <ul class="nav navbar-nav">
+                            <li class="menu-item-has-children">
+                                <a href="#">Who we are</a>
+                                <ul class="sub-menu">
+                                    <li><a href="about.html">About us </a></li>
+                                    <li><a href="index-2.html">Meet the team</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="products.html">Our Products</a></li>
+                            <li><a href="period-calculator.html">period calculator</a></li>
+                            <li class="menu-item-has-children">
+                                <a href="causes.html">Training</a>
+                            </li>
+                            <li class="menu-item-has-children">
+                                <a href="#">Impact</a>
+                                <ul class="sub-menu">
+                                    <li><a href="error.html">Impact</a></li>
+                                    <li><a href="error.html">Training</a></li>
+                                    <li><a href="error.html">Our clients</a></li>
+                                </ul>
+                            </li>
+                            <li class="menu-item-has-children">
+                                <a href="#">Blog</a>
+                                <ul class="sub-menu">
+                                    <li><a href="blog.html">News</a></li>
+                                    <li><a href="blog.html">Blog</a></li>
+                                    <li class="menu-item-has-children">
+                                    </li>
+                                </ul>
+                            </li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div><!-- end of nav-collapse -->
+                    <div class="cart-search-contact">
+                        <div class="mini-cart">
+                            <button class="cart-toggle-btn"> <i class="fi flaticon-shopping-bag"></i> <span class="cart-count">02</span></button>
+                            <div class="mini-cart-content">
+                                <div class="mini-cart-title">
+                                    <p>Shopping Cart</p>
+                                </div>
+                                <div class="mini-cart-items">
+                                    <div class="mini-cart-item clearfix">
+                                        <div class="mini-cart-item-image">
+                                            <a href="#"><img src="assets/images/shop/mini/image-1.jpg" alt="Hoodie with zipper"></a>
+                                        </div>
+                                        <div class="mini-cart-item-des">
+                                            <a href="#">Afyaplus pads pack of four</a>
+                                            <span class="mini-cart-item-price">TSH 15,000</span>
+                                            <span class="mini-cart-item-quantity">x 1</span>
+                                        </div>
+                                    </div>
+                                    <div class="mini-cart-item clearfix">
+                                        <div class="mini-cart-item-image">
+                                            <a href="#"><img src="assets/images/shop/mini/image-2.jpg" alt="Hoodie with zipper"></a>
+                                        </div>
+                                        <div class="mini-cart-item-des">
+                                            <a href="#">Afyaplus pads pack of two</a>
+                                            <span class="mini-cart-item-price">TSH 8500</span>
+                                            <span class="mini-cart-item-quantity">x 1</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mini-cart-action clearfix">
+                                    <span class="mini-checkout-price">TSH 750,000</span>
+                                    <a href="" class="theme-btn-s4">View Cart</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="header-search-form-wrapper">
+                            <button class="search-toggle-btn"><i class="fi flaticon-magnifying-glass"></i></button>
+                            <div class="header-search-form">
+                                <form>
+                                    <div>
+                                        <input type="text" class="form-control" placeholder="Search here...">
+                                        <button type="submit"><i class="fi flaticon-magnifying-glass"></i></button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- end of container -->
+            </nav>
+        </header>
+        <!-- end of header -->
+        <!-- .wpo-breadcumb-area start -->
+  <section class="hero">
+        <div class="hero-content">
+            <h1>Reusable Sanitary Pads</h1>
+            <p>Comfortable, eco-friendly menstrual solutions that last for years</p>
+            <a href="#products" class="btn">Shop Now</a>
+        </div>
+    </section>
+        <!-- .wpo-breadcumb-area end -->
+
+        <!-- volunteer-area-start -->
+            <!-- wpo-team-area start -->
+ <!-- Products Section -->
+    <section class="products-section" id="products">
+        <div class="section-title">
+            <h2>Our Products</h2>
+            <p>High-quality reusable sanitary pads designed for comfort, reliability, and environmental sustainability</p>
+        </div>
+        
+        <div class="product-grid">
+            <!-- Product 1 -->
+            <div class="product-card">
+                <div class="product-badge">Best Seller</div>
+                <div class="product-image">
+                    <img src="assets/images/shop/2.jpg" alt="Regular Flow Kit">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Regular Flow Kit</h3>
+                    <p class="product-desc">Perfect for medium flow days. Includes 4 pads and a waterproof carrying pouch.</p>
+                    <div class="product-price">TZS 15,000</div>
+                    <div class="product-actions">
+                        <button class="btn-outline" onclick="viewDetails(1)">Details</button>
+                        <button class="btn-solid" onclick="addToCart(1)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Product 2 -->
+            <div class="product-card">
+                <div class="product-badge">New</div>
+                <div class="product-image">
+                    <img src="assets/images/shop/1.png" alt="Heavy Flow Kit">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Heavy Flow Kit</h3>
+                    <p class="product-desc">Extra absorbent pads for heavy flow days. Includes 6 pads and storage bag.</p>
+                    <div class="product-price">TZS 22,500</div>
+                    <div class="product-actions">
+                        <button class="btn-outline" onclick="viewDetails(2)">Details</button>
+                        <button class="btn-solid" onclick="addToCart(2)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Product 3 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="assets/images/shop/P06.jpg" alt="Pantyliner Kit">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">School Kit</h3>
+                    <p class="product-desc">Absorbent pads for school. Includes 4 pads and water proof storage bag..</p>
+                    <div class="product-price">TZS 15,000</div>
+                    <div class="product-actions">
+                        <button class="btn-outline" onclick="viewDetails(3)">Details</button>
+                        <button class="btn-solid" onclick="addToCart(3)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Product 4 -->
+            <div class="product-card">
+                <div class="product-badge">Retail Pack</div>
+                <div class="product-image">
+                    <img src="assets/images/shop/3.jpg" alt="Complete Kit">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Complete Kit</h3>
+                    <p class="product-desc">Special Bundle: 4 Packs (50+ AfyaPlus Pads) for Our Top Agents & Sellers</p>
+                    <div class="product-price">TZS 12,000</div>
+                    <div class="product-actions">
+                        <button class="btn-outline" onclick="viewDetails(4)">Details</button>
+                        <button class="btn-solid" onclick="addToCart(4)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Product 5 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="assets/images/shop/8.jpg" alt="Starter Kit">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Starter Kit</h3>
+                    <p class="product-desc">Begin your reusable journey. 4 afyaplus pads.</p>
+                    <div class="product-price">TZS 15,000</div>
+                    <div class="product-actions">
+                        <button class="btn-outline" onclick="viewDetails(5)">Details</button>
+                        <button class="btn-solid" onclick="addToCart(5)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Product 6 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="assets/images/shop/5.jpg" alt="Travel Kit">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Travel Kit</h3>
+                    <p class="product-desc">Compact set for on-the-go. 2 regular pads and a discreet waterproof bag.</p>
+                    <div class="product-price">TZS 8,500</div>
+                    <div class="product-actions">
+                        <button class="btn-outline" onclick="viewDetails(6)">Details</button>
+                        <button class="btn-solid" onclick="addToCart(6)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+            <!-- wpo-team-area end -->
+        </div>
+        <!-- volunteer-area-end -->
+
+ <!-- Shopping Cart Sidebar -->
+    <div class="overlay" id="overlay"></div>
+    
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3>Your Cart</h3>
+            <span class="close-cart" id="closeCart">&times;</span>
+        </div>
+        
+        <div class="cart-items" id="cartItems">
+            <!-- Cart items will be added here dynamically -->
+            <p class="empty-cart-message">Your cart is empty</p>
+        </div>
+        
+        <div class="cart-summary">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cartTotal">TZS 0</span>
+            </div>
+            <button class="checkout-btn">Proceed to Checkout</button>
+        </div>
+    </div>
+
+
+        <div class="wpo-ne-footer">
+            <!-- start wpo-news-letter-section -->
+            <section class="wpo-news-letter-section">
+                <div class="container">
+                    <div class="row">
+                        <div class="col col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+                            <div class="wpo-newsletter">
+                                <h3>Follow us For ferther information</h3>
+                                <div class="wpo-newsletter-form">
+                                    <form>
+                                        <div>
+                                            <input type="text" placeholder="Enter Your Email" class="form-control">
+                                            <button type="submit">Subscribe</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> <!-- end container -->
+            </section>
+            <!-- end wpo-news-letter-section -->
+ <!-- start wpo-site-footer -->
+            <footer class="wpo-site-footer">
+                <div class="wpo-upper-footer">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col col-lg-3 col-md-3 col-sm-6">
+                                <div class="widget about-widget">
+                                    <div class="logo widget-title">
+                                        <img src="assets/images/logo-2.png" alt="blog">
+                                    </div>
+                                    <p>Afyaplus pads are sustainable solution offer providing long-lasting protection, reduce waste, and help you save costs. </p>
+                                    <ul>
+                                        <li><a href="https://www.facebook.com/p/AfyaplusPads-100063977850113/"><i class="ti-facebook"></i></a></li>
+                                        <li><a href="https://x.com/search?q=afyaplus%20pads&src=typed_query"><i class="ti-twitter-alt"></i></a></li>
+                                        <li><a href="https://www.instagram.com/afyapluspads/"><i class="ti-instagram"></i></a></li>
+                                        <li><a href="https://www.linkedin.com/company/afyaplus-organization/posts/?feedView=all"><i class="ti-linkedIn"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col col-lg-3 col-md-3 col-sm-6">
+                                <div class="widget link-widget resource-widget">
+                                    <div class="widget-title">
+                                        <h3>Top News</h3>
+                                    </div>
+                                    <div class="news-wrap">
+                                        <div class="news-img">
+                                            <img src="assets/images/footer/2.jpg" alt="">
+                                        </div>
+                                        <div class="news-text">
+                                            <h3>JALI Distributed Afyaplus pads in Manyara region</h3>
+                                            <span>12 March, 2023</span>
+                                        </div>
+                                    </div>
+                                    <div class="news-wrap">
+                                        <div class="news-img">
+                                            <img src="assets/images/footer/1.jpg" alt="">
+                                        </div>
+                                        <div class="news-text">
+                                            <h3>TAWASANET Visits JALI</h3>
+                                            <span>14 June, 2024</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col col-lg-2 col-md-3 col-sm-6">
+                                <div class="widget link-widget">
+                                    <div class="widget-title">
+                                        <h3>Useful Links</h3>
+                                    </div>
+                                    <ul>
+                                        <li><a href="about.html">About Us</a></li>
+                                        <li><a href="products.html">Our products</a></li>
+                                        <li><a href="blog.html">Blog</a></li>
+                                        <li><a href="contact.html">Contact Us</a></li>
+                                        <li><a href="causes.html">MHH education</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col col-lg-3 col-lg-offset-1 col-md-3 col-sm-6">
+                                <div class="widget market-widget wpo-service-link-widget">
+                                    <div class="widget-title">
+                                        <h3>Contact </h3>
+                                    </div>
+                                    <p>Be a part of change by contact us</p>
+                                    <div class="contact-ft">
+                                        <ul>
+                                            <li><i class="fi flaticon-pin"></i>BOX 1562 SIDO, Iringa, Tanzania</li>
+                                            <li><i class="fi flaticon-call"></i>+0 (255) 756 825 134</li>
+                                            <li><i class="fi flaticon-envelope"></i>info@afyapluspads.com</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> <!-- end container -->
+                </div>
+                <div class="wpo-lower-footer">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col col-xs-12">
+                                <p class="copyright">&copy; 2025 JALI ICT DEPARTMENT.  All rights reserved</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+            <!-- end wpo-site-footer -->
+        </div>
+    </div>
+    <!-- end of page-wrapper -->
+    <!-- All JavaScript files
+    ================================================== -->
+    <script src="assets/js/jquery.min.js"></script>
+     <script>
+        // Sample product data
+        const products = {
+            1: { id: 1, name: "Regular Flow Kit", price: 18000, image: "https://images.unsplash.com/photo-1591348278863-a8fb3887e2aa?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" },
+            2: { id: 2, name: "Heavy Flow Kit", price: 22000, image: "https://images.unsplash.com/photo-1583947581924-a31d2586b7e3?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" },
+            3: { id: 3, name: "Pantyliner Kit", price: 12000, image: "https://images.unsplash.com/photo-1591348278997-7ce3084980c6?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" },
+            4: { id: 4, name: "Complete Kit", price: 35000, image: "https://images.unsplash.com/photo-1583947581924-a31d2586b7e3?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" },
+            5: { id: 5, name: "Starter Kit", price: 15000, image: "https://images.unsplash.com/photo-1591348278863-a8fb3887e2aa?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" },
+            6: { id: 6, name: "Travel Kit", price: 16000, image: "https://images.unsplash.com/photo-1583947581924-a31d2586b7e3?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" }
+        };
+        
+        // Cart functionality
+        let cart = [];
+        
+        // DOM elements
+        const cartIcon = document.getElementById('cartIcon');
+        const cartSidebar = document.getElementById('cartSidebar');
+        const closeCart = document.getElementById('closeCart');
+        const overlay = document.getElementById('overlay');
+        const cartItems = document.getElementById('cartItems');
+        const cartTotal = document.getElementById('cartTotal');
+        const cartCount = document.querySelector('.cart-count');
+        
+        // Toggle cart sidebar
+        cartIcon.addEventListener('click', () => {
+            cartSidebar.classList.add('open');
+            overlay.classList.add('active');
+        });
+        
+        closeCart.addEventListener('click', () => {
+            cartSidebar.classList.remove('open');
+            overlay.classList.remove('active');
+        });
+        
+        overlay.addEventListener('click', () => {
+            cartSidebar.classList.remove('open');
+            overlay.classList.remove('active');
+        });
+        
+        // Add to cart function
+        function addToCart(productId) {
+            const product = products[productId];
+            const existingItem = cart.find(item => item.id === productId);
+            
+            if (existingItem) {
+                existingItem.quantity += 1;
+            } else {
+                cart.push({
+                    id: product.id,
+                    name: product.name,
+                    price: product.price,
+                    image: product.image,
+                    quantity: 1
+                });
+            }
+            
+            updateCart();
+            cartSidebar.classList.add('open');
+            overlay.classList.add('active');
+            
+            // Show added to cart animation
+            const btn = event.target;
+            btn.textContent = 'Added!';
+            btn.style.backgroundColor = '#2D9CDB';
+            setTimeout(() => {
+                btn.textContent = 'Add to Cart';
+                btn.style.backgroundColor = '';
+            }, 1000);
+        }
+        
+        // Update cart UI
+        function updateCart() {
+            // Update cart items
+            if (cart.length === 0) {
+                cartItems.innerHTML = '<p class="empty-cart-message">Your cart is empty</p>';
+            } else {
+                cartItems.innerHTML = cart.map(item => `
+                    <div class="cart-item" data-id="${item.id}">
+                        <div class="cart-item-image">
+                            <img src="${item.image}" alt="${item.name}">
+                        </div>
+                        <div class="cart-item-details">
+                            <h4 class="cart-item-title">${item.name}</h4>
+                            <div class="cart-item-price">TZS ${item.price.toLocaleString()}</div>
+                            <div class="cart-item-quantity">
+                                <button class="quantity-btn minus">-</button>
+                                <input type="text" class="quantity-input" value="${item.quantity}" readonly>
+                                <button class="quantity-btn plus">+</button>
+                            </div>
+                            <span class="remove-item">Remove</span>
+                        </div>
+                    </div>
+                `).join('');
+                
+                // Add event listeners to quantity buttons
+                document.querySelectorAll('.quantity-btn.minus').forEach(btn => {
+                    btn.addEventListener('click', decreaseQuantity);
+                });
+                
+                document.querySelectorAll('.quantity-btn.plus').forEach(btn => {
+                    btn.addEventListener('click', increaseQuantity);
+                });
+                
+                document.querySelectorAll('.remove-item').forEach(btn => {
+                    btn.addEventListener('click', removeItem);
+                });
+            }
+            
+            // Update cart total
+            const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+            cartTotal.textContent = `TZS ${total.toLocaleString()}`;
+            
+            // Update cart count
+            const count = cart.reduce((sum, item) => sum + item.quantity, 0);
+            cartCount.textContent = count;
+        }
+        
+        // Quantity functions
+        function decreaseQuantity() {
+            const itemId = parseInt(this.closest('.cart-item').dataset.id);
+            const item = cart.find(item => item.id === itemId);
+            
+            if (item.quantity > 1) {
+                item.quantity -= 1;
+            } else {
+                cart = cart.filter(item => item.id !== itemId);
+            }
+            
+            updateCart();
+        }
+        
+        function increaseQuantity() {
+            const itemId = parseInt(this.closest('.cart-item').dataset.id);
+            const item = cart.find(item => item.id === itemId);
+            item.quantity += 1;
+            updateCart();
+        }
+        
+        function removeItem() {
+            const itemId = parseInt(this.closest('.cart-item').dataset.id);
+            cart = cart.filter(item => item.id !== itemId);
+            updateCart();
+        }
+        
+        // View details function (would link to product detail page)
+        function viewDetails(productId) {
+            alert(`Viewing details for product ${productId}`);
+            // In a real implementation, this would redirect to a product detail page
+            // window.location.href = `product.html?id=${productId}`;
+        }
+    </script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <!-- Plugins for this template -->
+    <script src="assets/js/jquery-plugin-collection.js"></script>
+    <!-- Custom script for this template -->
+    <script src="assets/js/script.js"></script>
+</body>
+
+</html>
