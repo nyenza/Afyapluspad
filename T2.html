@@ -3,8 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AfyaPlus Pad - Menstrual Health Education</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="author" content="wpoceans">
+    <title>Afyaplus pads website</title>
+    <link href="assets/css/themify-icons.css" rel="stylesheet">
+    <link href="assets/css/font-awesome.min.css" rel="stylesheet">
+    <link href="assets/css/flaticon.css" rel="stylesheet">
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/animate.css" rel="stylesheet">
+    <link href="assets/css/owl.carousel.css" rel="stylesheet">
+    <link href="assets/css/owl.theme.css" rel="stylesheet">
+    <link href="assets/css/slick.css" rel="stylesheet">
+    <link href="assets/css/slick-theme.css" rel="stylesheet">
+    <link href="assets/css/swiper.min.css" rel="stylesheet">
+    <link href="assets/css/owl.transitions.css" rel="stylesheet">
+    <link href="assets/css/jquery.fancybox.css" rel="stylesheet">
+    <link href="assets/css/odometer-theme-default.css" rel="stylesheet">
+    <link href="assets/css/nice-select.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
     <style>
         /* General Styles */
         body {
@@ -25,74 +43,13 @@
         }
         
         /* Header Styles */
-        header {
-            background-color: #d81b60;
-            color: white;
-            padding: 15px 0;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            animation: fadeInDown 0.8s;
-        }
-        
-        .header-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .logo {
-            font-size: 24px;
-            font-weight: bold;
-            transition: transform 0.3s ease;
-        }
-        
         .logo:hover {
             transform: scale(1.05);
         }
-        
-        nav ul {
-            display: flex;
-            list-style: none;
-        }
-        
-        nav ul li {
-            margin-left: 20px;
-            position: relative;
-        }
-        
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-weight: 500;
-            padding: 5px 0;
-            transition: color 0.3s;
-        }
-        
-        nav ul li a:hover {
-            color: #ffc0cb;
-        }
-        
-        nav ul li a::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: 0;
-            left: 0;
-            background-color: white;
-            transition: width 0.3s ease;
-        }
-        
-        nav ul li a:hover::after {
-            width: 100%;
-        }
-        
         /* Main Content Styles */
         .page-title {
             text-align: center;
-            color: #d81b60;
+            color: #9957c8;
             margin: 30px 0;
             font-size: 2.5em;
             animation: fadeIn 1s;
@@ -151,19 +108,19 @@
         }
         
         .topic-title {
-            color: #d81b60;
+            color: #9957c8;
             margin-top: 0;
             font-size: 1.2em;
             transition: color 0.3s;
         }
         
         .topic-card:hover .topic-title {
-            color: #b71550;
+            color: #9957c8;
         }
         
         .read-more {
             display: inline-block;
-            background-color: #d81b60;
+            background-color: #9957c8;
             color: white;
             padding: 8px 15px;
             border-radius: 4px;
@@ -176,7 +133,7 @@
         }
         
         .read-more:hover {
-            background-color: #b71550;
+            background-color: #9957c8;
             transform: translateY(-2px);
             box-shadow: 0 4px 8px rgba(216, 27, 96, 0.3);
         }
@@ -239,7 +196,7 @@
         
         .progress-bar {
             height: 100%;
-            background: #d81b60;
+            background: #9957c8;
             width: 0%;
             transition: width 0.1s;
         }
@@ -249,7 +206,7 @@
             position: fixed;
             bottom: 30px;
             right: 30px;
-            background-color: #d81b60;
+            background-color:#9957c8;
             color: white;
             width: 50px;
             height: 50px;
@@ -271,61 +228,10 @@
         }
         
         .back-to-top:hover {
-            background-color: #b71550;
+            background-color: #FFFFFF;
             transform: translateY(-3px);
         }
         
-        /* Footer Styles */
-        footer {
-            background-color: #333;
-            color: white;
-            padding: 30px 0;
-            margin-top: 50px;
-            animation: fadeIn 1s;
-        }
-        
-        .footer-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 30px;
-        }
-        
-        .footer-column h3 {
-            color: #d81b60;
-            margin-top: 0;
-        }
-        
-        .footer-column ul {
-            list-style: none;
-            padding: 0;
-        }
-        
-        .footer-column ul li {
-            margin-bottom: 10px;
-            transition: transform 0.3s;
-        }
-        
-        .footer-column ul li:hover {
-            transform: translateX(5px);
-        }
-        
-        .footer-column ul li a {
-            color: #ccc;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-        
-        .footer-column ul li a:hover {
-            color: white;
-        }
-        
-        .copyright {
-            text-align: center;
-            margin-top: 30px;
-            padding-top: 20px;
-            border-top: 1px solid #555;
-            color: #aaa;
-        }
         
         /* Pulse animation for important cards */
         @keyframes pulse {
@@ -368,25 +274,135 @@
         <div class="progress-bar" id="progressBar"></div>
     </div>
     
-    <!-- Header Section -->
-    <header>
-        <div class="container header-container">
-            <div class="logo animate__animated animate__fadeInLeft">AfyaPlus Pad</div>
-            <nav>
-                <ul>
-                    <li><a href="index.html" class="animate__animated animate__fadeInDown" style="animation-delay: 0.1s;">Home</a></li>
-                    <li><a href="products.html" class="animate__animated animate__fadeInDown" style="animation-delay: 0.2s;">Products</a></li>
-                    <li><a href="training.html" class="animate__animated animate__fadeInDown" style="animation-delay: 0.3s;">Education</a></li>
-                    <li><a href="about.html" class="animate__animated animate__fadeInDown" style="animation-delay: 0.4s;">About Us</a></li>
-                    <li><a href="contact.html" class="animate__animated animate__fadeInDown" style="animation-delay: 0.5s;">Contact</a></li>
-                </ul>
+         <header id="header" class="wpo-site-header wpo-header-style-3">
+            <div class="topbar">
+                <div class="container">
+                    <div class="row">
+                        <div class="col col-md-6 col-sm-7 col-12">
+                        </div>
+                         <!-- <div class="col col-md-6 col-sm-5 col-12">
+                        </div>-->
+                    </div>
+                </div>
+            </div>  <!-- end topbar -->
+            <nav class="navigation navbar navbar-default">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="open-btn">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="index.html"><img src="assets/images/jali.png" alt="logo"></a>
+                    </div>
+                    <div id="navbar" class="navbar-collapse collapse navbar-right navigation-holder">
+                        <button class="close-navbar"><i class="ti-close"></i></button>
+                        <ul class="nav navbar-nav">
+                            <li class="menu-item-has-children">
+                                <a href="#">Who we are</a>
+                                <ul class="sub-menu">
+                                    <li><a href="about.html">About us </a></li>
+                                    <li><a href="index-2.html">Meet the team</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="products.html">Our Products</a></li>
+                            <li><a href="period-calculator.html">period calculator</a></li>
+                            <li class="menu-item-has-children">
+                                <a href="error.html">Training</a>
+                            </li>
+                            <li class="menu-item-has-children">
+                                <a href="error.html">Impact</a>
+                                <ul class="sub-menu">
+                                    <li><a href="error.html">Impact</a></li>
+                                    <li><a href="error.html">Training</a></li>
+                                    <li><a href="error.html">Our clients</a></li>
+                                </ul>
+                            </li>
+                            <li class="menu-item-has-children">
+                                <a href="#">Blog</a>
+                                <ul class="sub-menu">
+                                    <li><a href="blog.html">News</a></li>
+                                    <li><a href="blog.html">Blog</a></li>
+                                    <li class="menu-item-has-children">
+                                    </li>
+                                </ul>
+                            </li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div><!-- end of nav-collapse -->
+                    <div class="cart-search-contact">
+                        <div class="mini-cart">
+                            <button class="cart-toggle-btn"> <i class="fi flaticon-shopping-bag"></i> <span class="cart-count">02</span></button>
+                            <div class="mini-cart-content">
+                                <div class="mini-cart-title">
+                                    <p>Shopping Cart</p>
+                                </div>
+                                <div class="mini-cart-items">
+                                    <div class="mini-cart-item clearfix">
+                                        <div class="mini-cart-item-image">
+                                            <a href="#"><img src="assets/images/shop/mini/image-1.jpg" alt="Hoodie with zipper"></a>
+                                        </div>
+                                        <div class="mini-cart-item-des">
+                                            <a href="#">Afyaplus pads pack of four</a>
+                                            <span class="mini-cart-item-price">TSH 15,000</span>
+                                            <span class="mini-cart-item-quantity">x 1</span>
+                                        </div>
+                                    </div>
+                                    <div class="mini-cart-item clearfix">
+                                        <div class="mini-cart-item-image">
+                                            <a href="#"><img src="assets/images/shop/mini/image-2.jpg" alt="Hoodie with zipper"></a>
+                                        </div>
+                                        <div class="mini-cart-item-des">
+                                            <a href="#">Afyaplus pads pack of two</a>
+                                            <span class="mini-cart-item-price">TSH 8500</span>
+                                            <span class="mini-cart-item-quantity">x 1</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mini-cart-action clearfix">
+                                    <span class="mini-checkout-price">TSH 750,000</span>
+                                    <a href="products.html" class="theme-btn-s4">View Cart</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="header-search-form-wrapper">
+                            <button class="search-toggle-btn"><i class="fi flaticon-magnifying-glass"></i></button>
+                            <div class="header-search-form">
+                                <form>
+                                    <div>
+                                        <input type="text" class="form-control" placeholder="Search here...">
+                                        <button type="submit"><i class="fi flaticon-magnifying-glass"></i></button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- end of container -->
             </nav>
+        </header>
+        <!-- end of header -->
+        <!-- .wpo-breadcumb-area start -->
+        <div class="wpo-breadcumb-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="wpo-breadcumb-wrap">
+                            <h2>Menstrual Education</h2>
+                            <ul>
+                                <li><a href="index.html">Home</a></li>
+                                <li><span>MHH</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
+        <!-- .wpo-breadcumb-area end -->
     </header>
     
     <!-- Main Content Section -->
     <main class="container">
-        <h1 class="page-title animate__animated animate__fadeIn">Menstrual Health Education</h1>
         
         <div class="topics-grid">
             <!-- Topic 1 -->
@@ -622,45 +638,120 @@
     <!-- Back to top button -->
     <a href="#" class="back-to-top animate__animated animate__fadeIn" id="backToTop">↑</a>
     
-    <!-- Footer Section -->
-    <footer>
-        <div class="container footer-container">
-            <div class="footer-column">
-                <h3>AfyaPlus Pad</h3>
-                <p>Providing sustainable menstrual health solutions for all women.</p>
-            </div>
-            <div class="footer-column">
-                <h3>Quick Links</h3>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="products.html">Products</a></li>
-                    <li><a href="training.html">Education</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h3>Contact Us</h3>
-                <ul>
-                    <li>Email: info@afyapluspad.com</li>
-                    <li>Phone: +254 700 123456</li>
-                    <li>Address: Nairobi, Kenya</li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h3>Follow Us</h3>
-                <ul>
-                    <li><a href="#">Facebook</a></li>
-                    <li><a href="#">Twitter</a></li>
-                    <li><a href="#">Instagram</a></li>
-                    <li><a href="#">YouTube</a></li>
-                </ul>
-            </div>
+       <div class="wpo-ne-footer">
+            <!-- start wpo-news-letter-section -->
+            <section class="wpo-news-letter-section">
+                <div class="container">
+                    <div class="row">
+                        <div class="col col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+                            <div class="wpo-newsletter">
+                                <h3>Follow us For ferther information</h3>
+                                <div class="wpo-newsletter-form">
+                                    <form>
+                                        <div>
+                                            <input type="text" placeholder="Enter Your Email" class="form-control">
+                                            <button type="submit">Subscribe</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> <!-- end container -->
+            </section>
+            <!-- end wpo-news-letter-section -->
+            <!-- start wpo-site-footer -->
+              </section>
+            <!-- end wpo-news-letter-section -->
+            <!-- start wpo-site-footer -->
+            <footer class="wpo-site-footer">
+                <div class="wpo-upper-footer">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col col-lg-3 col-md-3 col-sm-6">
+                                <div class="widget about-widget">
+                                    <div class="logo widget-title">
+                                        <img src="assets/images/logo-2.png" alt="blog">
+                                    </div>
+                                    <p>Afyaplus pads are sustainable solution offer providing long-lasting protection, reduce waste, and help you save costs. </p>
+                                    <ul>
+                                        <li><a href="https://www.facebook.com/p/AfyaplusPads-100063977850113/"><i class="ti-facebook"></i></a></li>
+                                        <li><a href="https://x.com/search?q=afyaplus%20pads&src=typed_query"><i class="ti-twitter-alt"></i></a></li>
+                                        <li><a href="https://www.instagram.com/afyapluspads/"><i class="ti-instagram"></i></a></li>
+                                        <li><a href="https://www.linkedin.com/company/afyaplus-organization/posts/?feedView=all"><i class="ti-linkedIn"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col col-lg-3 col-md-3 col-sm-6">
+                                <div class="widget link-widget resource-widget">
+                                    <div class="widget-title">
+                                        <h3>Top News</h3>
+                                    </div>
+                                    <div class="news-wrap">
+                                        <div class="news-img">
+                                            <img src="assets/images/footer/2.jpg" alt="">
+                                        </div>
+                                        <div class="news-text">
+                                            <h3>JALI Distributed Afyaplus pads in Manyara region</h3>
+                                            <span>12 March, 2023</span>
+                                        </div>
+                                    </div>
+                                    <div class="news-wrap">
+                                        <div class="news-img">
+                                            <img src="assets/images/footer/1.jpg" alt="">
+                                        </div>
+                                        <div class="news-text">
+                                            <h3>TAWASANET Visits JALI</h3>
+                                            <span>14 June, 2024</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col col-lg-2 col-md-3 col-sm-6">
+                                <div class="widget link-widget">
+                                    <div class="widget-title">
+                                        <h3>Useful Links</h3>
+                                    </div>
+                                    <ul>
+                                        <li><a href="about.html">About Us</a></li>
+                                        <li><a href="products.html">Our products</a></li>
+                                        <li><a href="blog.html">Blog</a></li>
+                                        <li><a href="contact.html">Contact Us</a></li>
+                                        <li><a href="causes.html">MHH education</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col col-lg-3 col-lg-offset-1 col-md-3 col-sm-6">
+                                <div class="widget market-widget wpo-service-link-widget">
+                                    <div class="widget-title">
+                                        <h3>Contact </h3>
+                                    </div>
+                                    <p>Be a part of change by contact us</p>
+                                    <div class="contact-ft">
+                                        <ul>
+                                            <li><i class="fi flaticon-pin"></i>BOX 1562 SIDO, Iringa, Tanzania</li>
+                                            <li><i class="fi flaticon-call"></i>+0 (255) 756 825 134</li>
+                                            <li><i class="fi flaticon-envelope"></i>info@afyapluspads.com</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> <!-- end container -->
+                </div>
+                <div class="wpo-lower-footer">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col col-xs-12">
+                                <p class="copyright">&copy; 2025 JALI ICT DEPARTMENT.  All rights reserved</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+            <!-- end wpo-site-footer -->
         </div>
-        <div class="container copyright">
-            <p>&copy; 2023 AfyaPlus Pad. All rights reserved.</p>
-        </div>
-    </footer>
+    </div>
 
     <script>
         // Animation for topic cards when they come into view
