@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="wpoceans">
+    <title>Our Clients & Partners | Afyaplus Pads</title>
+    <link href="assets/css/themify-icons.css" rel="stylesheet">
+    <link href="assets/css/font-awesome.min.css" rel="stylesheet">
+    <link href="assets/css/flaticon.css" rel="stylesheet">
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/animate.css" rel="stylesheet">
+    <link href="assets/css/owl.carousel.css" rel="stylesheet">
+    <link href="assets/css/owl.theme.css" rel="stylesheet">
+    <link href="assets/css/slick.css" rel="stylesheet">
+    <link href="assets/css/slick-theme.css" rel="stylesheet">
+    <link href="assets/css/swiper.min.css" rel="stylesheet">
+    <link href="assets/css/owl.transitions.css" rel="stylesheet">
+    <link href="assets/css/jquery.fancybox.css" rel="stylesheet">
+    <link href="assets/css/odometer-theme-default.css" rel="stylesheet">
+    <link href="assets/css/nice-select.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #9957c8;
+            --secondary: #2D9CDB;
+            --dark: #333333;
+            --light: #F8F8F8;
+            --gray: #E0E0E0;
+            --white: #FFFFFF;
+        }
+        
+        .partners-hero {
+            background: linear-gradient(rgba(153, 87, 200, 0.8), rgba(153, 87, 200, 0.8)), url('assets/images/partners-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .partners-hero-content {
+            max-width: 800px;
+            padding: 0 20px;
+        }
+        
+        .partners-hero h1 {
+            font-size: 42px;
+            margin-bottom: 15px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+        }
+        
+        .partners-hero p {
+            font-size: 18px;
+            margin-bottom: 25px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+        
+        .partners-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px 50px;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .section-title h2 {
+            font-size: 32px;
+            color: var(--primary);
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title h2:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: var(--secondary);
+        }
+        
+        .section-title p {
+            color: #666;
+            max-width: 700px;
+            margin: 20px auto 0;
+            line-height: 1.6;
+        }
+        
+        /* Logo Slider Styles */
+        .logo-slider-section {
+            padding: 60px 0;
+            background-color: var(--light);
+            margin-bottom: 50px;
+        }
+        
+        .logo-slider-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .logo-slider {
+            margin: 40px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .logo-slider-track {
+            display: flex;
+            animation: scroll 30s linear infinite;
+            width: calc(200px * 14);
+        }
+        
+        .logo-slide {
+            height: 120px;
+            width: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 20px;
+            transition: all 0.3s ease;
+        }
+        
+        .logo-slide img {
+            max-height: 80px;
+            max-width: 160px;
+            filter: grayscale(100%);
+            opacity: 0.7;
+            transition: all 0.3s ease;
+        }
+        
+        .logo-slide:hover img {
+            filter: grayscale(0%);
+            opacity: 1;
+            transform: scale(1.1);
+        }
+        
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(calc(-200px * 7)); }
+        }
+        
+        /* Partnership Section */
+        .partnership-section {
+            background-color: var(--white);
+            padding: 60px 0;
+            margin-bottom: 50px;
+        }
+        
+        .partnership-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .partnership-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .partnership-card {
+            background: var(--white);
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            border-top: 4px solid var(--primary);
+        }
+        
+        .partnership-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        
+        .partnership-card h3 {
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-size: 22px;
+        }
+        
+        .partnership-card p {
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        
+        .btn-partner {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--primary);
+            color: white;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+            border: 2px solid var(--primary);
+        }
+        
+        .btn-partner:hover {
+            background-color: transparent;
+            color: var(--primary);
+        }
+        
+        /* Impact Section */
+        .impact-section {
+            background-color: var(--light);
+            padding: 60px 0;
+        }
+        
+        .impact-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .impact-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+        
+        .impact-stat {
+            text-align: center;
+            padding: 30px 20px;
+            background: var(--white);
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .impact-stat h3 {
+            font-size: 42px;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+        
+        .impact-stat p {
+            color: #555;
+            font-size: 16px;
+        }
+        
+        /* Testimonials */
+        .testimonial-section {
+            padding: 60px 0;
+        }
+        
+        .testimonial-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .testimonial-slider {
+            margin-top: 40px;
+        }
+        
+        .testimonial {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            margin: 0 15px;
+        }
+        
+        .testimonial-content {
+            font-style: italic;
+            color: #555;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .testimonial-author img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 15px;
+        }
+        
+        .author-info h4 {
+            color: var(--dark);
+            margin-bottom: 5px;
+        }
+        
+        .author-info p {
+            color: #777;
+            font-size: 14px;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .logo-slide {
+                width: 180px;
+            }
+            
+            .logo-slider-track {
+                width: calc(180px * 14);
+            }
+            
+            @keyframes scroll {
+                0% { transform: translateX(0); }
+                100% { transform: translateX(calc(-180px * 7)); }
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .partners-hero {
+                height: 350px;
+            }
+            
+            .partners-hero h1 {
+                font-size: 36px;
+            }
+            
+            .logo-slide {
+                width: 150px;
+                height: 100px;
+            }
+            
+            .logo-slider-track {
+                width: calc(150px * 14);
+            }
+            
+            @keyframes scroll {
+                0% { transform: translateX(0); }
+                100% { transform: translateX(calc(-150px * 7)); }
+            }
+            
+            .section-title h2 {
+                font-size: 28px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .partners-hero {
+                height: 300px;
+            }
+            
+            .partners-hero h1 {
+                font-size: 28px;
+            }
+            
+            .logo-slide {
+                width: 120px;
+                height: 80px;
+            }
+            
+            .logo-slider-track {
+                width: calc(120px * 14);
+            }
+            
+            @keyframes scroll {
+                0% { transform: translateX(0); }
+                100% { transform: translateX(calc(-120px * 7)); }
+            }
+            
+            .partnership-cards {
+                grid-template-columns: 1fr;
+            }
+            
+            .impact-stats {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- start page-wrapper -->
+    <div class="page-wrapper">
+        <!-- start preloader -->
+        <div class="preloader">
+            <div class="sk-folding-cube">
+                <div class="sk-cube1 sk-cube"></div>
+                <div class="sk-cube2 sk-cube"></div>
+                <div class="sk-cube4 sk-cube"></div>
+                <div class="sk-cube3 sk-cube"></div>
+            </div>
+        </div>
+        <!-- end preloader -->
+        
+        <!-- Start header -->
+        <header id="header" class="wpo-site-header wpo-header-style-3">
+            <!-- Your existing header code here --><!-- start page-wrapper -->
+        <!-- start page-wrapper -->
+    <div class="page-wrapper">
+        <!-- start preloader -->
+        <div class="preloader">
+            <div class="sk-folding-cube">
+                <div class="sk-cube1 sk-cube"></div>
+                <div class="sk-cube2 sk-cube"></div>
+                <div class="sk-cube4 sk-cube"></div>
+                <div class="sk-cube3 sk-cube"></div>
+            </div>
+        </div>
+        <!-- end preloader -->
+        <!-- Start header -->
+        <header id="header" class="wpo-site-header wpo-header-style-3">
+            <div class="topbar">
+                <div class="container">
+                    <div class="row">
+                        <div class="col col-md-6 col-sm-7 col-12">
+                        </div>
+                         <!-- <div class="col col-md-6 col-sm-5 col-12">
+                        </div>-->
+                    </div>
+                </div>
+            </div>  <!-- end topbar -->
+            <nav class="navigation navbar navbar-default">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="open-btn">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="index.html"><img src="assets/images/jali.png" alt="logo"></a>
+                    </div>
+                    <div id="navbar" class="navbar-collapse collapse navbar-right navigation-holder">
+                        <button class="close-navbar"><i class="ti-close"></i></button>
+                        <ul class="nav navbar-nav">
+                            <li class="menu-item-has-children">
+                                <a href="#">Who we are</a>
+                                <ul class="sub-menu">
+                                    <li><a href="about.html">About us </a></li>
+                                    <li><a href="index-2.html">Meet the team</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="products.html">Our Products</a></li>
+                            <li><a href="period-calculator.html">period calculator</a></li>
+                            <li class="menu-item-has-children">
+                                <a href="Things to avoid.html">Training</a>
+                            </li>
+                            <li class="menu-item-has-children">
+                                <a href="#">Impact</a>
+                                <ul class="sub-menu">
+                                    <li><a href="error.html">Impact</a></li>
+                                    <li><a href="Train.html">Training</a></li>
+                                    <li><a href="error.html">Our clients</a></li>
+                                </ul>
+                            </li>
+                            <li class="menu-item-has-children">
+                                <a href="#">Blog</a>
+                                <ul class="sub-menu">
+                                    <li><a href="blog.html">News</a></li>
+                                    <li><a href="blog.html">Blog</a></li>
+                                    <li class="menu-item-has-children">
+                                    </li>
+                                </ul>
+                            </li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div><!-- end of nav-collapse -->
+                    <div class="cart-search-contact">
+                        <div class="mini-cart">
+                            <button class="cart-toggle-btn"> <i class="fi flaticon-shopping-bag"></i> <span class="cart-count">02</span></button>
+                            <div class="mini-cart-content">
+                                <div class="mini-cart-title">
+                                    <p>Shopping Cart</p>
+                                </div>
+                                <div class="mini-cart-items">
+                                    <div class="mini-cart-item clearfix">
+                                        <div class="mini-cart-item-image">
+                                            <a href="#"><img src="assets/images/shop/mini/image-1.jpg" alt="Hoodie with zipper"></a>
+                                        </div>
+                                        <div class="mini-cart-item-des">
+                                            <a href="#">Afyaplus pads pack of four</a>
+                                            <span class="mini-cart-item-price">TSH 15,000</span>
+                                            <span class="mini-cart-item-quantity">x 1</span>
+                                        </div>
+                                    </div>
+                                    <div class="mini-cart-item clearfix">
+                                        <div class="mini-cart-item-image">
+                                            <a href="#"><img src="assets/images/shop/mini/image-2.jpg" alt="Hoodie with zipper"></a>
+                                        </div>
+                                        <div class="mini-cart-item-des">
+                                            <a href="#">Afyaplus pads pack of two</a>
+                                            <span class="mini-cart-item-price">TSH 8500</span>
+                                            <span class="mini-cart-item-quantity">x 1</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mini-cart-action clearfix">
+                                    <span class="mini-checkout-price">TSH 750,000</span>
+                                    <a href="" class="theme-btn-s4">View Cart</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="header-search-form-wrapper">
+                            <button class="search-toggle-btn"><i class="fi flaticon-magnifying-glass"></i></button>
+                            <div class="header-search-form">
+                                <form>
+                                    <div>
+                                        <input type="text" class="form-control" placeholder="Search here...">
+                                        <button type="submit"><i class="fi flaticon-magnifying-glass"></i></button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- end of container -->
+            </nav>
+        </header>
+        <!-- end of header -->
+        <!-- .wpo-breadcumb-area start -->
+        
+        
+        <!-- Partners Hero -->
+        <section class="partners-hero">
+            <div class="partners-hero-content">
+                <h1>Our Valued Clients & Partners</h1>
+                <p>Together with our partners and clients, we're working to end period poverty and empower women and girls across Tanzania</p>
+            </div>
+        </section>
+        
+        <!-- Partners Section -->
+        <div class="partners-container">
+            <div class="section-title">
+                <h2>Our Strategic Partners</h2>
+                <p>We collaborate with organizations that share our vision of menstrual equity and women's empowerment</p>
+            </div>
+        </div>
+        
+        <div class="logo-slider-section">
+            <div class="logo-slider-container">
+                <div class="logo-slider">
+                    <div class="logo-slider-track">
+                        <!-- Duplicate slides to create infinite loop -->
+                        <div class="logo-slide">
+                            <img src="assets/images/partners/unicef.png" alt="UNICEF">
+                        </div>
+                        <div class="logo-slide">
+                            <img src="assets/images/partners/undp.png" alt="UNDP">
+                        </div>
+                        <div class="logo-slide">
+                            <img src="assets/images/partners/usaid.png" alt="USAID">
+                        </div>
+                        <div class="logo-slide">
+                            <img src="assets/images/partners/amref.png" alt="AMREF">
+                        </div>
+                        <div class="logo-slide">
+                            <img src="assets/images/partners/path.png" alt="PATH">
+                        </div>
+                        <div class="logo-slide">
+                            <img src="assets/images/partners/worldbank.png" alt="World Bank">
+                        </div>
+                        <div class="logo-slide">
+                            <img src="assets/images/partners/crdb.png" alt="CRDB Bank">
+                        </div>
+                        <!-- Duplicate slides -->
+                        <div class="logo-slide">
+                            <img src="assets/images/partners/unicef.png" alt="UNICEF">
+                        </div>
+                        <div class="logo-slide">
+                            <img src="assets/images/partners/undp.png" alt="UNDP">
+                        </div>
+                        <div class="logo-slide">
+                            <img src="assets/images/partners/usaid.png" alt="USAID">
+                        </div>
+                        <div class="logo-slide">
+                            <img src="assets/images/partners/amref.png" alt="AMREF">
+                        </div>
+                        <div class="logo-slide">
+                            <img src="assets/images/partners/path.png" alt="PATH">
+                        </div>
+                        <div class="logo-slide">
+                            <img src="assets/images/partners/worldbank.png" alt="World Bank">
+                        </div>
+                        <div class="logo-slide">
+                            <img src="assets/images/partners/crdb.png" alt="CRDB Bank">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Clients Section -->
+        <div class="partners-container">
+            <div class="section-title">
+                <h2>Our Clients</h2>
+                <p>Schools, organizations, and individuals who trust Afyaplus for their menstrual health needs</p>
+            </div>
+        </div>
+        
+        <div class="logo-slider-section" style="background-color: var(--white);">
+            <div class="logo-slider-container">
+                <div class="logo-slider">
+                    <div class="logo-slider-track">
+                        <!-- Duplicate slides to create infinite loop -->
+                        <div class="logo-slide">
+                            <img src="assets/images/clients/school1.png" alt="Dar es Salaam Secondary School">
+                        </div>
+                        <div class="logo-slide">
+                            <img src="assets/images/clients/school2.png" alt="Arusha Girls Academy">
+                        </div>
+                        <div class="logo-slide">
+                            <img src="assets/images/clients/school3.png" alt="Mwanza High School">
+                        </div>
+                        <div class="logo-slide">
+                            <img src="assets/images/clients/ngo1.png" alt="Girl Effect Tanzania">
+                        </div>
+                        <div class="logo-slide">
+                            <img src="assets/images/clients/ngo2.png" alt="Women's Health Initiative">
+                        </div>
+                        <div class="logo-slide">
+                            <img src="assets/images/clients/company1.png" alt="Tanzania Breweries">
+                        </div>
+                        <div class="logo-slide">
+                            <img src="assets/images/clients/company2.png" alt="Vodacom Tanzania">
+                        </div>
+                        <!-- Duplicate slides -->
+                        <div class="logo-slide">
+                            <img src="assets/images/clients/school1.png" alt="Dar es Salaam Secondary School">
+                        </div>
+                        <div class="logo-slide">
+                            <img src="assets/images/clients/school2.png" alt="Arusha Girls Academy">
+                        </div>
+                        <div class="logo-slide">
+                            <img src="assets/images/clients/school3.png" alt="Mwanza High School">
+                        </div>
+                        <div class="logo-slide">
+                            <img src="assets/images/clients/ngo1.png" alt="Girl Effect Tanzania">
+                        </div>
+                        <div class="logo-slide">
+                            <img src="assets/images/clients/ngo2.png" alt="Women's Health Initiative">
+                        </div>
+                        <div class="logo-slide">
+                            <img src="assets/images/clients/company1.png" alt="Tanzania Breweries">
+                        </div>
+                        <div class="logo-slide">
+                            <img src="assets/images/clients/company2.png" alt="Vodacom Tanzania">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Partnership Section -->
+        <div class="partnership-section">
+            <div class="partnership-container">
+                <div class="section-title">
+                    <h2>Partner With Us</h2>
+                    <p>Join our mission to end period poverty and empower women and girls across Tanzania</p>
+                </div>
+                
+                <div class="partnership-cards">
+                    <div class="partnership-card">
+                        <h3>Corporate Partnerships</h3>
+                        <p>Align your brand with our mission through sponsorship, employee engagement programs, or product donations. We offer customized partnership opportunities that create meaningful impact.</p>
+                        <a href="#" class="btn-partner">Become a Corporate Partner</a>
+                    </div>
+                    
+                    <div class="partnership-card">
+                        <h3>NGO Collaborations</h3>
+                        <p>Join forces with us to implement menstrual health programs in communities. We provide training, products, and monitoring support for your existing initiatives.</p>
+                        <a href="#" class="btn-partner">Explore NGO Partnerships</a>
+                    </div>
+                    
+                    <div class="partnership-card">
+                        <h3>School Programs</h3>
+                        <p>Bring Afyaplus pads and menstrual health education to your school. We offer special pricing for educational institutions and comprehensive training for teachers.</p>
+                        <a href="#" class="btn-partner">Start a School Program</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Impact Section -->
+        <div class="impact-section">
+            <div class="impact-container">
+                <div class="section-title">
+                    <h2>Our Collective Impact</h2>
+                    <p>Together with our partners and clients, we're making a difference in menstrual health across Tanzania</p>
+                </div>
+                
+                <div class="impact-stats">
+                    <div class="impact-stat">
+                        <h3>250+</h3>
+                        <p>Schools Reached</p>
+                    </div>
+                    <div class="impact-stat">
+                        <h3>50,000+</h3>
+                        <p>Girls Empowered</p>
+                    </div>
+                    <div class="impact-stat">
+                        <h3>100+</h3>
+                        <p>Community Workshops</p>
+                    </div>
+                    <div class="impact-stat">
+                        <h3>10+</h3>
+                        <p>Corporate Partners</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Testimonials Section -->
+        <div class="testimonial-section">
+            <div class="testimonial-container">
+                <div class="section-title">
+                    <h2>What Our Partners Say</h2>
+                    <p>Hear from organizations and institutions we've collaborated with</p>
+                </div>
+                
+                <div class="testimonial-slider owl-carousel">
+                    <div class="testimonial">
+                        <div class="testimonial-content">
+                            "Our partnership with Afyaplus has transformed menstrual health education in our schools. Their reusable pads and training programs have significantly reduced absenteeism among our girls."
+                        </div>
+                        <div class="testimonial-author">
+                            <img src="assets/images/testimonials/1.jpg" alt="Sarah Johnson">
+                            <div class="author-info">
+                                <h4>Sarah Johnson</h4>
+                                <p>Director, Dar es Salaam Education Initiative</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial">
+                        <div class="testimonial-content">
+                            "As a corporate partner, we've found Afyaplus to be extremely professional and impactful. Their menstrual health programs for our female employees have been well-received and impactful."
+                        </div>
+                        <div class="testimonial-author">
+                            <img src="assets/images/testimonials/2.jpg" alt="Michael Mwambene">
+                            <div class="author-info">
+                                <h4>Michael Mwambene</h4>
+                                <p>HR Director, Vodacom Tanzania</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial">
+                        <div class="testimonial-content">
+                            "The quality of Afyaplus pads and their commitment to menstrual health education is unmatched. We've distributed their products to rural communities with excellent feedback from beneficiaries."
+                        </div>
+                        <div class="testimonial-author">
+                            <img src="assets/images/testimonials/3.jpg" alt="Grace Mwakasege">
+                            <div class="author-info">
+                                <h4>Grace Mwakasege</h4>
+                                <p>Program Manager, AMREF Tanzania</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Your existing footer code here -->
+        
+    </div>
+    <!-- end of page-wrapper -->
+    
+    <!-- All JavaScript files -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/owl.carousel.min.js"></script>
+    <script>
+        // Initialize testimonial slider
+        $(document).ready(function(){
+            $('.testimonial-slider').owlCarousel({
+                loop: true,
+                margin: 20,
+                nav: true,
+                dots: false,
+                responsive: {
+                    0: {
+                        items: 1
+                    },
+                    768: {
+                        items: 2
+                    }
+                }
+            });
+            
+            // Pause logo slider on hover
+            $('.logo-slider-track').hover(
+                function() {
+                    $(this).css('animation-play-state', 'paused');
+                },
+                function() {
+                    $(this).css('animation-play-state', 'running');
+                }
+            );
+        });
+    </script>
+    <!-- Plugins for this template -->
+    <script src="assets/js/jquery-plugin-collection.js"></script>
+    <!-- Custom script for this template -->
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
